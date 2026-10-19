@@ -8,12 +8,23 @@
 </style></head><body><div class="wrap"><header class="top"><div class="logo"><span class="mark">EN</span> Ôn Thi Tiếng Anh <span class="tag">ADMIN RIÊNG</span></div><a class="btn alt" href="index.html">← Trang ôn thi</a></header>
 <section class="admin-banner"><strong>QUẢN TRỊ NGÂN HÀNG ĐỀ</strong><p>Thêm, sửa, xóa câu trắc nghiệm và viết lại câu. Dữ liệu được lưu trên trình duyệt hiện tại. Sau khi hoàn tất, nhấn <b>Xuất questions.js</b> rồi đưa file đó lên GitHub để tất cả học viên thấy câu mới.</p><p><b>Cảnh báo:</b> Đây là trang tĩnh công khai, chưa có đăng nhập bảo vệ. Ai có liên kết admin.html đều có thể mở giao diện quản lý, nhưng không thể sửa repository GitHub nếu không có quyền ghi vào repository.</p></section>
 <main id="view"></main><footer class="footer">Ôn Thi Tiếng Anh • Trang quản trị riêng • Sao lưu JSON thường xuyên</footer></div>
-<script src="questions.js"></script><script>
+<script src="questions.js?v=book104_20261019"></script><script>
 'use strict';
-const ADMIN_KEY='on_thi_tieng_anh_bank_v1';
+const ADMIN_KEY='on_thi_tieng_anh_bank_202_images_v1';
 const defaultBank={mcqs:structuredClone(mcqs),rewrites:structuredClone(rewrites)};
 const $=s=>document.querySelector(s),view=$('#view');
 function readBank(){try{let d=JSON.parse(localStorage.getItem(ADMIN_KEY));return d&&Array.isArray(d.mcqs)&&Array.isArray(d.rewrites)?d:null}catch(e){return null}}
+// Di chuyển dữ liệu cũ 194 câu về bản 104 câu trong sách, chỉ một lần.
+// Sao lưu dữ liệu cũ trước khi xóa, không động tới lịch sử học.
+const MIGRATION_KEY='on_thi_migrated_book104_v2';
+if(!localStorage.getItem(MIGRATION_KEY)){
+  const oldBank=readBank();
+  if(oldBank && (oldBank.mcqs.some(q=>!String(q.id||'').startsWith('BOOK_')) || oldBank.rewrites.some(q=>!String(q.id||'').startsWith('BOOK_')))){
+    try{localStorage.setItem('on_thi_backup_194_before_book104',JSON.stringify(oldBank));}catch(e){}
+    localStorage.removeItem(ADMIN_KEY);
+  }
+  try{localStorage.setItem(MIGRATION_KEY,'1');}catch(e){}
+}
 const saved=readBank();if(saved){mcqs=saved.mcqs;rewrites=saved.rewrites}
 function saveBank(){try{localStorage.setItem(ADMIN_KEY,JSON.stringify({mcqs,rewrites}));return true}catch(e){alert('Không lưu được dữ liệu. Hãy xuất JSON để sao lưu.');return false}}
 function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}

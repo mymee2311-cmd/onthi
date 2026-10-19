@@ -1,14 +1,12 @@
-# Ôn Thi Tiếng Anh — ngân hàng câu hỏi có giải thích
+# Ôn Thi Tiếng Anh – bộ đề từ ảnh sách (202 câu)
 
-- `index.html`: website học viên (hiện giải thích sau khi trả lời và khi xem lại thi thử).
-- `admin.html`: trang quản trị riêng, quản lý/sửa trường **Giải thích đáp án**.
-- `questions.js`: dữ liệu mặc định, có thể upload đè file cùng tên trong GitHub repo.
-- `questions.json`: file sao lưu/nhập dữ liệu tại trang Admin.
+- `questions.js`: **202 câu trắc nghiệm từ 20 ảnh sách**. Gồm 50 Vocabulary, 12 viết lại dạng chọn A–D và 140 câu điền từ (14 đoạn văn x 10 câu).
+- `rewrites`: để trống, vì ảnh gốc có 12 câu viết lại dạng trắc nghiệm, không phải dạng gõ tự luận.
+- `questions.json`: Dùng để nhập Admin hoặc lưu dự phòng.
+- `index.html`, `admin.html`: giao diện tương thích dữ liệu 202 câu, khóa lưu trữ mới để không kéo theo 194 câu cũ.
 
-## Đưa lên GitHub Pages
-Giải nén và tải riêng các file trong thư mục lên thư mục gốc repo (KHÔNG tải nguyên ZIP). Nếu chỉ cập nhật câu hỏi, tải đè **questions.js**. Chờ Actions deploy hoàn tất, sau đó Ctrl+Shift+R.
+## GitHub Pages
+Giải nén, upload **cả 4 file** `index.html`, `admin.html`, `questions.js`, `README.md` lên thư mục gốc repository, cập nhật các file cùng tên; chờ Actions Pages xanh; tải lại Ctrl+Shift+R.
 
-**Chú ý:** Trình duyệt có thể đang có bản ngân hàng câu hỏi cũ trong localStorage. Vào `admin.html` > **Khôi phục từ file** để dùng file mới, hoặc **Nhập JSON**. Hãy sao lưu bản cũ trước khi khôi phục. Bản Admin này lưu cục bộ; để học viên khác thấy thay đổi, xuất questions.js mới và commit lên GitHub.
-
-## Giới hạn độ chính xác
-Dữ liệu hiện có chứa 3 bài điền từ đầy đủ (Camping, Honey, Money) từ ảnh; các bài đọc khác trong ảnh **chưa được số hóa** vào bộ dữ liệu. Các giải thích từ sách là diễn giải ôn tập, không có bảng đáp án chính thức của nhà xuất bản. Câu viết lại được chấm so khớp đáp án mẫu.
+## Chú ý chất lượng
+Đã nhập lại nội dung các đoạn và 4 lựa chọn từ ảnh, nhưng ảnh có một số chữ hơi mờ; đáp án là kết quả kiểm tra ngữ pháp/ngữ cảnh, **chưa so với đáp án chính thức của nhà xuất bản**. Một số lời giải là nhận xét ngắn. Không dùng như đáp án chính thức khi chưa đối chiếu bản gốc.
