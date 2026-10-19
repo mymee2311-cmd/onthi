@@ -1,105 +1,2426 @@
-// NGÂN HÀNG CÂU HỎI: sửa/thêm câu trực tiếp tại đây.
-// MCQ: [chủ đề, câu hỏi, [4 lựa chọn], vị trí đáp án đúng (0=A,1=B,2=C,3=D), giải thích, đoạn văn (không bắt buộc)]
-// Rewrite: [câu gốc, đáp án mẫu, gợi ý]
-// Giữ nguyên cấu trúc dấu ngoặc và dấu phẩy.
-
-const rawMCQ = [
-// Grammar
-['grammar','If I _____ enough money, I would study abroad.',['have','had','will have','would have'],1,'Câu điều kiện loại 2: If + quá khứ đơn, would + động từ nguyên mẫu.'],
-['grammar','By the time we arrived, the film _____.',['starts','has started','had started','was starting'],2,'Past perfect diễn tả hành động xảy ra trước một thời điểm quá khứ.'],
-['grammar','She suggested _____ a taxi to the airport.',['take','to take','taking','taken'],2,'Suggest + V-ing.'],
-['grammar','Hardly _____ the room when the phone rang.',['I had entered','had I entered','I entered','did I entered'],1,'Đảo ngữ: Hardly had + S + V3 + when...'],
-['grammar','The report _____ by Friday afternoon.',['must submit','must be submitted','must be submit','must submitted'],1,'Modal passive: must + be + V3.'],
-['grammar','He is used to _____ up early.',['get','getting','got','to get'],1,'Be used to + V-ing: quen với điều gì.'],
-['grammar','Neither the manager nor the employees _____ aware of the change.',['was','is','were','has'],2,'Động từ hòa hợp với chủ ngữ gần nhất: employees → were.'],
-['grammar','The woman _____ car was stolen called the police.',['who','whom','whose','which'],2,'Whose biểu thị quan hệ sở hữu.'],
-['grammar','I wish I _____ more time to finish the assignment.',['have','had','will have','having'],1,'Wish ở hiện tại: wish + quá khứ đơn.'],
-['grammar','You _____ have told me earlier; I could have helped.',['should','must','may','can'],0,'Should have + V3: lẽ ra nên làm điều gì.'],
-['grammar','Not only _____ French, but she also speaks German.',['she speaks','does she speak','speaks she','she does speak'],1,'Đảo ngữ sau Not only ở đầu câu.'],
-['grammar','The more you practise, _____ you become.',['the confident','more confident','the more confident','most confident'],2,'So sánh kép: The + comparative, the + comparative.'],
-['grammar','He denied _____ the confidential document.',['to leak','leaking','leak','leaked'],1,'Deny + V-ing.'],
-['grammar','I would rather you _____ here tomorrow.',['come','came','will come','coming'],1,'Would rather + someone + past simple cho mong muốn.'],
-['grammar','The meeting has been postponed _____ further notice.',['by','until','for','since'],1,'Until further notice: cho đến khi có thông báo mới.'],
-['grammar','The book, _____ I borrowed from the library, was fascinating.',['that','what','which','whose'],2,'Mệnh đề quan hệ không xác định dùng which sau dấu phẩy.'],
-['grammar','If she had studied harder, she _____ the test.',['passes','would pass','would have passed','had passed'],2,'Điều kiện loại 3: would have + V3.'],
-['grammar','He has worked here _____ 2020.',['for','since','during','from'],1,'Since + mốc thời gian.'],
-['grammar','Despite _____ tired, she continued working.',['be','being','was','to be'],1,'Despite + danh từ/V-ing.'],
-['grammar','No sooner had I sat down _____ the doorbell rang.',['when','than','then','that'],1,'No sooner ... than ...'],
-['grammar','You had better _____ a doctor.',['seeing','to see','see','seen'],2,'Had better + nguyên mẫu không to.'],
-['grammar','The project is believed _____ completed next month.',['to be','being','be','to have'],0,'Be believed + to-infinitive; passive: to be completed.'],
-['grammar','I look forward to _____ from you soon.',['hear','hearing','heard','be heard'],1,'Look forward to + V-ing.'],
-['grammar','There is little point in _____ about the past.',['worry','worried','worrying','to worry'],2,'There is little point in + V-ing.'],
-['grammar','It is essential that every student _____ on time.',['is','be','was','being'],1,'Subjunctive: It is essential that + S + base verb.'],
-// Vocabulary
-['vocabulary','Her presentation was so _____ that everyone paid attention.',['compelling','compulsory','temporary','ordinary'],0,'Compelling = thuyết phục, thu hút.'],
-['vocabulary','We need to _____ a solution before the deadline.',['come up with','put up with','look down on','get away with'],0,'Come up with = nghĩ ra, đề xuất.'],
-['vocabulary','The new policy will have a significant _____ on small businesses.',['affect','effect','effort','affection'],1,'Have an effect on = tác động lên.'],
-['vocabulary','His explanation was _____; nobody could understand it.',['straightforward','ambiguous','accurate','relevant'],1,'Ambiguous = mơ hồ, đa nghĩa.'],
-['vocabulary','She has a strong _____ of responsibility.',['sense','feeling','thought','mind'],0,'Collocation: a sense of responsibility.'],
-['vocabulary','The company plans to _____ its operations into Asia.',['extend','expand','increase','spread out'],1,'Expand operations = mở rộng hoạt động kinh doanh.'],
-['vocabulary','The lecture was _____ because it provided new insights.',['insightful','insensitive','inefficient','indifferent'],0,'Insightful = sâu sắc.'],
-['vocabulary','He finally managed to _____ his fear of public speaking.',['overcome','overtake','overlook','overhear'],0,'Overcome fear = vượt qua nỗi sợ.'],
-['vocabulary','We should take the long-term consequences into _____.',['account','reason','attention','interest'],0,'Take ... into account = cân nhắc.'],
-['vocabulary','They had to _____ the event due to bad weather.',['call off','carry on','bring up','take after'],0,'Call off = hủy bỏ.'],
-['vocabulary','The scientist made a major _____ in renewable energy research.',['breakdown','breakthrough','breakout','break-in'],1,'Breakthrough = đột phá.'],
-['vocabulary','Reliable information is _____ for making good decisions.',['essential','optional','random','minor'],0,'Essential = thiết yếu.'],
-['vocabulary','The two proposals are _____ in terms of cost.',['comparable','compassionate','competitive','complimentary'],0,'Comparable = có thể so sánh.'],
-['vocabulary','The teacher encouraged students to _____ their opinions.',['express','expose','extend','extract'],0,'Express opinions = bày tỏ quan điểm.'],
-['vocabulary','The team worked hard to meet the tight _____.',['deadline','timeline','lifeline','headline'],0,'Meet the deadline = hoàn thành đúng hạn.'],
-['vocabulary','The charity relies on _____ from the public.',['donations','debts','expenses','profits'],0,'Donations = tiền/vật phẩm quyên góp.'],
-['vocabulary','You should _____ the pros and cons before choosing a major.',['weigh up','bring out','turn down','hold on'],0,'Weigh up = cân nhắc kỹ.'],
-['vocabulary','Although they disagreed, they eventually reached a _____.',['compromise','competition','complaint','comparison'],0,'Reach a compromise = đạt thỏa hiệp.'],
-['vocabulary','The documentary raises _____ about plastic waste.',['awareness','attention','knowledge','recognition'],0,'Raise awareness = nâng cao nhận thức.'],
-['vocabulary','This software is not _____ with older devices.',['compatible','capable','comfortable','considerable'],0,'Compatible with = tương thích với.'],
-// Cloze
-['cloze','Learning a language requires regular _____.',['practice','practise','practical','practised'],0,'Practice (noun) = sự luyện tập.','Learning a second language takes time and patience. Regular (1)_____ helps learners become more confident.'],
-['cloze','It is important to _____ realistic learning goals.',['set','make','do','put'],0,'Set goals = đặt mục tiêu.','Students often make progress when they (1)_____ realistic goals and review them weekly.'],
-['cloze','A good sleep routine can improve your ability to _____.',['concentrate','concentration','concentrated','concentrating'],0,'Ability to + verb.','Many students underestimate sleep. Getting enough rest helps them (1)_____ better during exams.'],
-['cloze','Online education makes resources more _____ to learners.',['accessible','acceptable','accountable','adaptable'],0,'Accessible to = dễ tiếp cận.','With a phone and an internet connection, digital resources are more (1)_____ than ever.'],
-['cloze','The project was successful _____ the limited budget.',['although','despite','because','however'],1,'Despite + noun phrase.','The volunteers organized an impressive event (1)_____ having very little money.'],
-['cloze','Cities can reduce pollution by _____ public transport.',['promoting','promoted','promote','promotion'],0,'By + V-ing.','One way to make cities greener is by (1)_____ buses and trains instead of private cars.'],
-['cloze','People are more likely to succeed when they remain _____.',['motivated','motivation','motivate','motivatingly'],0,'Remain + adjective.','Long-term success often depends on staying (1)_____ during difficult periods.'],
-['cloze','Employers often look for candidates who can work _____.',['independently','independent','independence','depend'],0,'Work + adverb independently.','In addition to technical knowledge, graduates should be able to work (1)_____.'],
-['cloze','The event attracted hundreds of _____ from different countries.',['participants','participates','participation','participated'],0,'Hundreds of + plural countable noun.','The international conference brought together hundreds of (1)_____ from around the world.'],
-['cloze','A balanced diet plays an important role _____ maintaining good health.',['in','at','on','for'],0,'Play a role in + V-ing.','Nutrition plays a vital role (1)_____ keeping the body healthy.'],
-// Reading
-['reading','What is the main benefit of flexible working hours mentioned in the text?',['Higher office rent','Better work-life balance','More commuting','Less autonomy'],1,'Bài đọc nêu nhân viên dễ cân bằng công việc và cuộc sống.', 'Many companies now offer flexible working hours. Instead of following a fixed nine-to-five schedule, employees may choose when to start and finish their work. Supporters say this arrangement helps workers manage family responsibilities and maintain a better work-life balance. However, clear communication is necessary to keep teams productive.'],
-['reading','According to the text, what is necessary for flexible working to succeed?',['Clear communication','Longer meetings','Strict fixed schedules','More offices'],0,'Câu cuối: clear communication is necessary.', 'Many companies now offer flexible working hours. Instead of following a fixed nine-to-five schedule, employees may choose when to start and finish their work. Supporters say this arrangement helps workers manage family responsibilities and maintain a better work-life balance. However, clear communication is necessary to keep teams productive.'],
-['reading','Why are urban green spaces valuable, according to the passage?',['They replace all transport','They improve wellbeing','They increase traffic','They eliminate all pollution'],1,'Công viên giúp cải thiện sức khỏe thể chất và tinh thần.', 'Parks and gardens do more than make cities attractive. They give residents places to exercise, relax and meet friends. Studies suggest that access to greenery can support physical and mental wellbeing. Nevertheless, public parks require ongoing maintenance and careful planning.'],
-['reading','What challenge does the passage mention about parks?',['A lack of residents','Maintenance and planning','Too many hospitals','Unreliable internet'],1,'Đoạn cuối nhắc tới maintenance and careful planning.', 'Parks and gardens do more than make cities attractive. They give residents places to exercise, relax and meet friends. Studies suggest that access to greenery can support physical and mental wellbeing. Nevertheless, public parks require ongoing maintenance and careful planning.'],
-['reading','Why might people choose reusable water bottles?',['To produce more waste','To reduce single-use plastic','To make water expensive','To avoid drinking water'],1,'Bình tái sử dụng giúp giảm nhựa dùng một lần.', 'The popularity of reusable water bottles has grown in recent years. Many consumers choose them to reduce single-use plastic waste. While producing a reusable bottle also requires resources, using it regularly over a long period can lower the need for disposable containers.'],
-['reading','What does the author imply about reusable bottles?',['They have zero environmental cost','Their value depends partly on repeated use','They are always free','They should never be washed'],1,'Giá trị môi trường phụ thuộc vào dùng thường xuyên, lâu dài.', 'The popularity of reusable water bottles has grown in recent years. Many consumers choose them to reduce single-use plastic waste. While producing a reusable bottle also requires resources, using it regularly over a long period can lower the need for disposable containers.'],
-['reading','What is a challenge of online learning mentioned in the passage?',['Courses cannot be recorded','Students need self-discipline','It always costs more','It prohibits independent work'],1,'Online learning yêu cầu self-discipline.', 'Online courses allow students to study from almost anywhere and often provide recorded lessons. This convenience is especially useful for people with busy schedules. On the other hand, learners need self-discipline to keep up with assignments, and some may miss face-to-face interaction.'],
-['reading','Who may benefit most from the flexibility of online learning?',['People with busy schedules','Only children','Only full-time teachers','People without devices'],0,'Tác giả nói sự tiện lợi đặc biệt hữu ích với người bận rộn.', 'Online courses allow students to study from almost anywhere and often provide recorded lessons. This convenience is especially useful for people with busy schedules. On the other hand, learners need self-discipline to keep up with assignments, and some may miss face-to-face interaction.'],
-['reading','What is the writer’s overall view of volunteering?',['It only benefits volunteers','It can benefit communities and volunteers','It should be compulsory','It replaces paid employment'],1,'Vừa cộng đồng vừa tình nguyện viên nhận lợi ích.', 'Volunteering is often associated with helping other people, but volunteers can gain valuable experience too. By taking part in community projects, they may develop teamwork and communication skills. These experiences can also introduce them to people from different backgrounds.'],
-['reading','Which skill is explicitly mentioned?',['Programming','Teamwork','Driving','Accounting'],1,'Bài đọc nêu teamwork and communication.', 'Volunteering is often associated with helping other people, but volunteers can gain valuable experience too. By taking part in community projects, they may develop teamwork and communication skills. These experiences can also introduce them to people from different backgrounds.']
+// Ngân hàng câu hỏi có giải thích đáp án. Cập nhật: 2026-10-19.
+// Bao gồm câu mẫu và 104 mục từ các ảnh sách đã được nhập trước đó; chưa số hóa hết tất cả các ảnh.
+let mcqs = [
+  {
+    "id": "M1",
+    "type": "grammar",
+    "q": "If I _____ enough money, I would study abroad.",
+    "options": [
+      "have",
+      "had",
+      "will have",
+      "would have"
+    ],
+    "correct": 1,
+    "explain": "Câu điều kiện loại 2: If + quá khứ đơn, would + động từ nguyên mẫu.",
+    "passage": ""
+  },
+  {
+    "id": "M2",
+    "type": "grammar",
+    "q": "By the time we arrived, the film _____.",
+    "options": [
+      "starts",
+      "has started",
+      "had started",
+      "was starting"
+    ],
+    "correct": 2,
+    "explain": "Past perfect diễn tả hành động xảy ra trước một thời điểm quá khứ.",
+    "passage": ""
+  },
+  {
+    "id": "M3",
+    "type": "grammar",
+    "q": "She suggested _____ a taxi to the airport.",
+    "options": [
+      "take",
+      "to take",
+      "taking",
+      "taken"
+    ],
+    "correct": 2,
+    "explain": "Suggest + V-ing.",
+    "passage": ""
+  },
+  {
+    "id": "M4",
+    "type": "grammar",
+    "q": "Hardly _____ the room when the phone rang.",
+    "options": [
+      "I had entered",
+      "had I entered",
+      "I entered",
+      "did I entered"
+    ],
+    "correct": 1,
+    "explain": "Đảo ngữ: Hardly had + S + V3 + when...",
+    "passage": ""
+  },
+  {
+    "id": "M5",
+    "type": "grammar",
+    "q": "The report _____ by Friday afternoon.",
+    "options": [
+      "must submit",
+      "must be submitted",
+      "must be submit",
+      "must submitted"
+    ],
+    "correct": 1,
+    "explain": "Modal passive: must + be + V3.",
+    "passage": ""
+  },
+  {
+    "id": "M6",
+    "type": "grammar",
+    "q": "He is used to _____ up early.",
+    "options": [
+      "get",
+      "getting",
+      "got",
+      "to get"
+    ],
+    "correct": 1,
+    "explain": "Be used to + V-ing: quen với điều gì.",
+    "passage": ""
+  },
+  {
+    "id": "M7",
+    "type": "grammar",
+    "q": "Neither the manager nor the employees _____ aware of the change.",
+    "options": [
+      "was",
+      "is",
+      "were",
+      "has"
+    ],
+    "correct": 2,
+    "explain": "Động từ hòa hợp với chủ ngữ gần nhất: employees → were.",
+    "passage": ""
+  },
+  {
+    "id": "M8",
+    "type": "grammar",
+    "q": "The woman _____ car was stolen called the police.",
+    "options": [
+      "who",
+      "whom",
+      "whose",
+      "which"
+    ],
+    "correct": 2,
+    "explain": "Whose biểu thị quan hệ sở hữu.",
+    "passage": ""
+  },
+  {
+    "id": "M9",
+    "type": "grammar",
+    "q": "I wish I _____ more time to finish the assignment.",
+    "options": [
+      "have",
+      "had",
+      "will have",
+      "having"
+    ],
+    "correct": 1,
+    "explain": "Wish ở hiện tại: wish + quá khứ đơn.",
+    "passage": ""
+  },
+  {
+    "id": "M10",
+    "type": "grammar",
+    "q": "You _____ have told me earlier; I could have helped.",
+    "options": [
+      "should",
+      "must",
+      "may",
+      "can"
+    ],
+    "correct": 0,
+    "explain": "Should have + V3: lẽ ra nên làm điều gì.",
+    "passage": ""
+  },
+  {
+    "id": "M11",
+    "type": "grammar",
+    "q": "Not only _____ French, but she also speaks German.",
+    "options": [
+      "she speaks",
+      "does she speak",
+      "speaks she",
+      "she does speak"
+    ],
+    "correct": 1,
+    "explain": "Đảo ngữ sau Not only ở đầu câu.",
+    "passage": ""
+  },
+  {
+    "id": "M12",
+    "type": "grammar",
+    "q": "The more you practise, _____ you become.",
+    "options": [
+      "the confident",
+      "more confident",
+      "the more confident",
+      "most confident"
+    ],
+    "correct": 2,
+    "explain": "So sánh kép: The + comparative, the + comparative.",
+    "passage": ""
+  },
+  {
+    "id": "M13",
+    "type": "grammar",
+    "q": "He denied _____ the confidential document.",
+    "options": [
+      "to leak",
+      "leaking",
+      "leak",
+      "leaked"
+    ],
+    "correct": 1,
+    "explain": "Deny + V-ing.",
+    "passage": ""
+  },
+  {
+    "id": "M14",
+    "type": "grammar",
+    "q": "I would rather you _____ here tomorrow.",
+    "options": [
+      "come",
+      "came",
+      "will come",
+      "coming"
+    ],
+    "correct": 1,
+    "explain": "Would rather + someone + past simple cho mong muốn.",
+    "passage": ""
+  },
+  {
+    "id": "M15",
+    "type": "grammar",
+    "q": "The meeting has been postponed _____ further notice.",
+    "options": [
+      "by",
+      "until",
+      "for",
+      "since"
+    ],
+    "correct": 1,
+    "explain": "Until further notice: cho đến khi có thông báo mới.",
+    "passage": ""
+  },
+  {
+    "id": "M16",
+    "type": "grammar",
+    "q": "The book, _____ I borrowed from the library, was fascinating.",
+    "options": [
+      "that",
+      "what",
+      "which",
+      "whose"
+    ],
+    "correct": 2,
+    "explain": "Mệnh đề quan hệ không xác định dùng which sau dấu phẩy.",
+    "passage": ""
+  },
+  {
+    "id": "M17",
+    "type": "grammar",
+    "q": "If she had studied harder, she _____ the test.",
+    "options": [
+      "passes",
+      "would pass",
+      "would have passed",
+      "had passed"
+    ],
+    "correct": 2,
+    "explain": "Điều kiện loại 3: would have + V3.",
+    "passage": ""
+  },
+  {
+    "id": "M18",
+    "type": "grammar",
+    "q": "He has worked here _____ 2020.",
+    "options": [
+      "for",
+      "since",
+      "during",
+      "from"
+    ],
+    "correct": 1,
+    "explain": "Since + mốc thời gian.",
+    "passage": ""
+  },
+  {
+    "id": "M19",
+    "type": "grammar",
+    "q": "Despite _____ tired, she continued working.",
+    "options": [
+      "be",
+      "being",
+      "was",
+      "to be"
+    ],
+    "correct": 1,
+    "explain": "Despite + danh từ/V-ing.",
+    "passage": ""
+  },
+  {
+    "id": "M20",
+    "type": "grammar",
+    "q": "No sooner had I sat down _____ the doorbell rang.",
+    "options": [
+      "when",
+      "than",
+      "then",
+      "that"
+    ],
+    "correct": 1,
+    "explain": "No sooner ... than ...",
+    "passage": ""
+  },
+  {
+    "id": "M21",
+    "type": "grammar",
+    "q": "You had better _____ a doctor.",
+    "options": [
+      "seeing",
+      "to see",
+      "see",
+      "seen"
+    ],
+    "correct": 2,
+    "explain": "Had better + nguyên mẫu không to.",
+    "passage": ""
+  },
+  {
+    "id": "M22",
+    "type": "grammar",
+    "q": "The project is believed _____ completed next month.",
+    "options": [
+      "to be",
+      "being",
+      "be",
+      "to have"
+    ],
+    "correct": 0,
+    "explain": "Be believed + to-infinitive; passive: to be completed.",
+    "passage": ""
+  },
+  {
+    "id": "M23",
+    "type": "grammar",
+    "q": "I look forward to _____ from you soon.",
+    "options": [
+      "hear",
+      "hearing",
+      "heard",
+      "be heard"
+    ],
+    "correct": 1,
+    "explain": "Look forward to + V-ing.",
+    "passage": ""
+  },
+  {
+    "id": "M24",
+    "type": "grammar",
+    "q": "There is little point in _____ about the past.",
+    "options": [
+      "worry",
+      "worried",
+      "worrying",
+      "to worry"
+    ],
+    "correct": 2,
+    "explain": "There is little point in + V-ing.",
+    "passage": ""
+  },
+  {
+    "id": "M25",
+    "type": "grammar",
+    "q": "It is essential that every student _____ on time.",
+    "options": [
+      "is",
+      "be",
+      "was",
+      "being"
+    ],
+    "correct": 1,
+    "explain": "Subjunctive: It is essential that + S + base verb.",
+    "passage": ""
+  },
+  {
+    "id": "M26",
+    "type": "vocabulary",
+    "q": "Her presentation was so _____ that everyone paid attention.",
+    "options": [
+      "compelling",
+      "compulsory",
+      "temporary",
+      "ordinary"
+    ],
+    "correct": 0,
+    "explain": "Compelling = thuyết phục, thu hút.",
+    "passage": ""
+  },
+  {
+    "id": "M27",
+    "type": "vocabulary",
+    "q": "We need to _____ a solution before the deadline.",
+    "options": [
+      "come up with",
+      "put up with",
+      "look down on",
+      "get away with"
+    ],
+    "correct": 0,
+    "explain": "Come up with = nghĩ ra, đề xuất.",
+    "passage": ""
+  },
+  {
+    "id": "M28",
+    "type": "vocabulary",
+    "q": "The new policy will have a significant _____ on small businesses.",
+    "options": [
+      "affect",
+      "effect",
+      "effort",
+      "affection"
+    ],
+    "correct": 1,
+    "explain": "Have an effect on = tác động lên.",
+    "passage": ""
+  },
+  {
+    "id": "M29",
+    "type": "vocabulary",
+    "q": "His explanation was _____; nobody could understand it.",
+    "options": [
+      "straightforward",
+      "ambiguous",
+      "accurate",
+      "relevant"
+    ],
+    "correct": 1,
+    "explain": "Ambiguous = mơ hồ, đa nghĩa.",
+    "passage": ""
+  },
+  {
+    "id": "M30",
+    "type": "vocabulary",
+    "q": "She has a strong _____ of responsibility.",
+    "options": [
+      "sense",
+      "feeling",
+      "thought",
+      "mind"
+    ],
+    "correct": 0,
+    "explain": "Collocation: a sense of responsibility.",
+    "passage": ""
+  },
+  {
+    "id": "M31",
+    "type": "vocabulary",
+    "q": "The company plans to _____ its operations into Asia.",
+    "options": [
+      "extend",
+      "expand",
+      "increase",
+      "spread out"
+    ],
+    "correct": 1,
+    "explain": "Expand operations = mở rộng hoạt động kinh doanh.",
+    "passage": ""
+  },
+  {
+    "id": "M32",
+    "type": "vocabulary",
+    "q": "The lecture was _____ because it provided new insights.",
+    "options": [
+      "insightful",
+      "insensitive",
+      "inefficient",
+      "indifferent"
+    ],
+    "correct": 0,
+    "explain": "Insightful = sâu sắc.",
+    "passage": ""
+  },
+  {
+    "id": "M33",
+    "type": "vocabulary",
+    "q": "He finally managed to _____ his fear of public speaking.",
+    "options": [
+      "overcome",
+      "overtake",
+      "overlook",
+      "overhear"
+    ],
+    "correct": 0,
+    "explain": "Overcome fear = vượt qua nỗi sợ.",
+    "passage": ""
+  },
+  {
+    "id": "M34",
+    "type": "vocabulary",
+    "q": "We should take the long-term consequences into _____.",
+    "options": [
+      "account",
+      "reason",
+      "attention",
+      "interest"
+    ],
+    "correct": 0,
+    "explain": "Take ... into account = cân nhắc.",
+    "passage": ""
+  },
+  {
+    "id": "M35",
+    "type": "vocabulary",
+    "q": "They had to _____ the event due to bad weather.",
+    "options": [
+      "call off",
+      "carry on",
+      "bring up",
+      "take after"
+    ],
+    "correct": 0,
+    "explain": "Call off = hủy bỏ.",
+    "passage": ""
+  },
+  {
+    "id": "M36",
+    "type": "vocabulary",
+    "q": "The scientist made a major _____ in renewable energy research.",
+    "options": [
+      "breakdown",
+      "breakthrough",
+      "breakout",
+      "break-in"
+    ],
+    "correct": 1,
+    "explain": "Breakthrough = đột phá.",
+    "passage": ""
+  },
+  {
+    "id": "M37",
+    "type": "vocabulary",
+    "q": "Reliable information is _____ for making good decisions.",
+    "options": [
+      "essential",
+      "optional",
+      "random",
+      "minor"
+    ],
+    "correct": 0,
+    "explain": "Essential = thiết yếu.",
+    "passage": ""
+  },
+  {
+    "id": "M38",
+    "type": "vocabulary",
+    "q": "The two proposals are _____ in terms of cost.",
+    "options": [
+      "comparable",
+      "compassionate",
+      "competitive",
+      "complimentary"
+    ],
+    "correct": 0,
+    "explain": "Comparable = có thể so sánh.",
+    "passage": ""
+  },
+  {
+    "id": "M39",
+    "type": "vocabulary",
+    "q": "The teacher encouraged students to _____ their opinions.",
+    "options": [
+      "express",
+      "expose",
+      "extend",
+      "extract"
+    ],
+    "correct": 0,
+    "explain": "Express opinions = bày tỏ quan điểm.",
+    "passage": ""
+  },
+  {
+    "id": "M40",
+    "type": "vocabulary",
+    "q": "The team worked hard to meet the tight _____.",
+    "options": [
+      "deadline",
+      "timeline",
+      "lifeline",
+      "headline"
+    ],
+    "correct": 0,
+    "explain": "Meet the deadline = hoàn thành đúng hạn.",
+    "passage": ""
+  },
+  {
+    "id": "M41",
+    "type": "vocabulary",
+    "q": "The charity relies on _____ from the public.",
+    "options": [
+      "donations",
+      "debts",
+      "expenses",
+      "profits"
+    ],
+    "correct": 0,
+    "explain": "Donations = tiền/vật phẩm quyên góp.",
+    "passage": ""
+  },
+  {
+    "id": "M42",
+    "type": "vocabulary",
+    "q": "You should _____ the pros and cons before choosing a major.",
+    "options": [
+      "weigh up",
+      "bring out",
+      "turn down",
+      "hold on"
+    ],
+    "correct": 0,
+    "explain": "Weigh up = cân nhắc kỹ.",
+    "passage": ""
+  },
+  {
+    "id": "M43",
+    "type": "vocabulary",
+    "q": "Although they disagreed, they eventually reached a _____.",
+    "options": [
+      "compromise",
+      "competition",
+      "complaint",
+      "comparison"
+    ],
+    "correct": 0,
+    "explain": "Reach a compromise = đạt thỏa hiệp.",
+    "passage": ""
+  },
+  {
+    "id": "M44",
+    "type": "vocabulary",
+    "q": "The documentary raises _____ about plastic waste.",
+    "options": [
+      "awareness",
+      "attention",
+      "knowledge",
+      "recognition"
+    ],
+    "correct": 0,
+    "explain": "Raise awareness = nâng cao nhận thức.",
+    "passage": ""
+  },
+  {
+    "id": "M45",
+    "type": "vocabulary",
+    "q": "This software is not _____ with older devices.",
+    "options": [
+      "compatible",
+      "capable",
+      "comfortable",
+      "considerable"
+    ],
+    "correct": 0,
+    "explain": "Compatible with = tương thích với.",
+    "passage": ""
+  },
+  {
+    "id": "M46",
+    "type": "cloze",
+    "q": "Learning a language requires regular _____.",
+    "options": [
+      "practice",
+      "practise",
+      "practical",
+      "practised"
+    ],
+    "correct": 0,
+    "explain": "Practice (noun) = sự luyện tập.",
+    "passage": "Learning a second language takes time and patience. Regular (1)_____ helps learners become more confident."
+  },
+  {
+    "id": "M47",
+    "type": "cloze",
+    "q": "It is important to _____ realistic learning goals.",
+    "options": [
+      "set",
+      "make",
+      "do",
+      "put"
+    ],
+    "correct": 0,
+    "explain": "Set goals = đặt mục tiêu.",
+    "passage": "Students often make progress when they (1)_____ realistic goals and review them weekly."
+  },
+  {
+    "id": "M48",
+    "type": "cloze",
+    "q": "A good sleep routine can improve your ability to _____.",
+    "options": [
+      "concentrate",
+      "concentration",
+      "concentrated",
+      "concentrating"
+    ],
+    "correct": 0,
+    "explain": "Ability to + verb.",
+    "passage": "Many students underestimate sleep. Getting enough rest helps them (1)_____ better during exams."
+  },
+  {
+    "id": "M49",
+    "type": "cloze",
+    "q": "Online education makes resources more _____ to learners.",
+    "options": [
+      "accessible",
+      "acceptable",
+      "accountable",
+      "adaptable"
+    ],
+    "correct": 0,
+    "explain": "Accessible to = dễ tiếp cận.",
+    "passage": "With a phone and an internet connection, digital resources are more (1)_____ than ever."
+  },
+  {
+    "id": "M50",
+    "type": "cloze",
+    "q": "The project was successful _____ the limited budget.",
+    "options": [
+      "although",
+      "despite",
+      "because",
+      "however"
+    ],
+    "correct": 1,
+    "explain": "Despite + noun phrase.",
+    "passage": "The volunteers organized an impressive event (1)_____ having very little money."
+  },
+  {
+    "id": "M51",
+    "type": "cloze",
+    "q": "Cities can reduce pollution by _____ public transport.",
+    "options": [
+      "promoting",
+      "promoted",
+      "promote",
+      "promotion"
+    ],
+    "correct": 0,
+    "explain": "By + V-ing.",
+    "passage": "One way to make cities greener is by (1)_____ buses and trains instead of private cars."
+  },
+  {
+    "id": "M52",
+    "type": "cloze",
+    "q": "People are more likely to succeed when they remain _____.",
+    "options": [
+      "motivated",
+      "motivation",
+      "motivate",
+      "motivatingly"
+    ],
+    "correct": 0,
+    "explain": "Remain + adjective.",
+    "passage": "Long-term success often depends on staying (1)_____ during difficult periods."
+  },
+  {
+    "id": "M53",
+    "type": "cloze",
+    "q": "Employers often look for candidates who can work _____.",
+    "options": [
+      "independently",
+      "independent",
+      "independence",
+      "depend"
+    ],
+    "correct": 0,
+    "explain": "Work + adverb independently.",
+    "passage": "In addition to technical knowledge, graduates should be able to work (1)_____."
+  },
+  {
+    "id": "M54",
+    "type": "cloze",
+    "q": "The event attracted hundreds of _____ from different countries.",
+    "options": [
+      "participants",
+      "participates",
+      "participation",
+      "participated"
+    ],
+    "correct": 0,
+    "explain": "Hundreds of + plural countable noun.",
+    "passage": "The international conference brought together hundreds of (1)_____ from around the world."
+  },
+  {
+    "id": "M55",
+    "type": "cloze",
+    "q": "A balanced diet plays an important role _____ maintaining good health.",
+    "options": [
+      "in",
+      "at",
+      "on",
+      "for"
+    ],
+    "correct": 0,
+    "explain": "Play a role in + V-ing.",
+    "passage": "Nutrition plays a vital role (1)_____ keeping the body healthy."
+  },
+  {
+    "id": "M56",
+    "type": "reading",
+    "q": "What is the main benefit of flexible working hours mentioned in the text?",
+    "options": [
+      "Higher office rent",
+      "Better work-life balance",
+      "More commuting",
+      "Less autonomy"
+    ],
+    "correct": 1,
+    "explain": "Bài đọc nêu nhân viên dễ cân bằng công việc và cuộc sống.",
+    "passage": "Many companies now offer flexible working hours. Instead of following a fixed nine-to-five schedule, employees may choose when to start and finish their work. Supporters say this arrangement helps workers manage family responsibilities and maintain a better work-life balance. However, clear communication is necessary to keep teams productive."
+  },
+  {
+    "id": "M57",
+    "type": "reading",
+    "q": "According to the text, what is necessary for flexible working to succeed?",
+    "options": [
+      "Clear communication",
+      "Longer meetings",
+      "Strict fixed schedules",
+      "More offices"
+    ],
+    "correct": 0,
+    "explain": "Câu cuối: clear communication is necessary.",
+    "passage": "Many companies now offer flexible working hours. Instead of following a fixed nine-to-five schedule, employees may choose when to start and finish their work. Supporters say this arrangement helps workers manage family responsibilities and maintain a better work-life balance. However, clear communication is necessary to keep teams productive."
+  },
+  {
+    "id": "M58",
+    "type": "reading",
+    "q": "Why are urban green spaces valuable, according to the passage?",
+    "options": [
+      "They replace all transport",
+      "They improve wellbeing",
+      "They increase traffic",
+      "They eliminate all pollution"
+    ],
+    "correct": 1,
+    "explain": "Công viên giúp cải thiện sức khỏe thể chất và tinh thần.",
+    "passage": "Parks and gardens do more than make cities attractive. They give residents places to exercise, relax and meet friends. Studies suggest that access to greenery can support physical and mental wellbeing. Nevertheless, public parks require ongoing maintenance and careful planning."
+  },
+  {
+    "id": "M59",
+    "type": "reading",
+    "q": "What challenge does the passage mention about parks?",
+    "options": [
+      "A lack of residents",
+      "Maintenance and planning",
+      "Too many hospitals",
+      "Unreliable internet"
+    ],
+    "correct": 1,
+    "explain": "Đoạn cuối nhắc tới maintenance and careful planning.",
+    "passage": "Parks and gardens do more than make cities attractive. They give residents places to exercise, relax and meet friends. Studies suggest that access to greenery can support physical and mental wellbeing. Nevertheless, public parks require ongoing maintenance and careful planning."
+  },
+  {
+    "id": "M60",
+    "type": "reading",
+    "q": "Why might people choose reusable water bottles?",
+    "options": [
+      "To produce more waste",
+      "To reduce single-use plastic",
+      "To make water expensive",
+      "To avoid drinking water"
+    ],
+    "correct": 1,
+    "explain": "Bình tái sử dụng giúp giảm nhựa dùng một lần.",
+    "passage": "The popularity of reusable water bottles has grown in recent years. Many consumers choose them to reduce single-use plastic waste. While producing a reusable bottle also requires resources, using it regularly over a long period can lower the need for disposable containers."
+  },
+  {
+    "id": "M61",
+    "type": "reading",
+    "q": "What does the author imply about reusable bottles?",
+    "options": [
+      "They have zero environmental cost",
+      "Their value depends partly on repeated use",
+      "They are always free",
+      "They should never be washed"
+    ],
+    "correct": 1,
+    "explain": "Giá trị môi trường phụ thuộc vào dùng thường xuyên, lâu dài.",
+    "passage": "The popularity of reusable water bottles has grown in recent years. Many consumers choose them to reduce single-use plastic waste. While producing a reusable bottle also requires resources, using it regularly over a long period can lower the need for disposable containers."
+  },
+  {
+    "id": "M62",
+    "type": "reading",
+    "q": "What is a challenge of online learning mentioned in the passage?",
+    "options": [
+      "Courses cannot be recorded",
+      "Students need self-discipline",
+      "It always costs more",
+      "It prohibits independent work"
+    ],
+    "correct": 1,
+    "explain": "Online learning yêu cầu self-discipline.",
+    "passage": "Online courses allow students to study from almost anywhere and often provide recorded lessons. This convenience is especially useful for people with busy schedules. On the other hand, learners need self-discipline to keep up with assignments, and some may miss face-to-face interaction."
+  },
+  {
+    "id": "M63",
+    "type": "reading",
+    "q": "Who may benefit most from the flexibility of online learning?",
+    "options": [
+      "People with busy schedules",
+      "Only children",
+      "Only full-time teachers",
+      "People without devices"
+    ],
+    "correct": 0,
+    "explain": "Tác giả nói sự tiện lợi đặc biệt hữu ích với người bận rộn.",
+    "passage": "Online courses allow students to study from almost anywhere and often provide recorded lessons. This convenience is especially useful for people with busy schedules. On the other hand, learners need self-discipline to keep up with assignments, and some may miss face-to-face interaction."
+  },
+  {
+    "id": "M64",
+    "type": "reading",
+    "q": "What is the writer’s overall view of volunteering?",
+    "options": [
+      "It only benefits volunteers",
+      "It can benefit communities and volunteers",
+      "It should be compulsory",
+      "It replaces paid employment"
+    ],
+    "correct": 1,
+    "explain": "Vừa cộng đồng vừa tình nguyện viên nhận lợi ích.",
+    "passage": "Volunteering is often associated with helping other people, but volunteers can gain valuable experience too. By taking part in community projects, they may develop teamwork and communication skills. These experiences can also introduce them to people from different backgrounds."
+  },
+  {
+    "id": "M65",
+    "type": "reading",
+    "q": "Which skill is explicitly mentioned?",
+    "options": [
+      "Programming",
+      "Teamwork",
+      "Driving",
+      "Accounting"
+    ],
+    "correct": 1,
+    "explain": "Bài đọc nêu teamwork and communication.",
+    "passage": "Volunteering is often associated with helping other people, but volunteers can gain valuable experience too. By taking part in community projects, they may develop teamwork and communication skills. These experiences can also introduce them to people from different backgrounds."
+  },
+  {
+    "id": "BOOK_M001",
+    "type": "grammar",
+    "q": "Although Tim felt tired, he stayed up to finish his homework.",
+    "options": [
+      "In spite of being tired, Tim stayed up to finish his homework.",
+      "Despite of being tired, Tim stayed up to finish his homework.",
+      "Tim felt tired because he stayed up to finish his homework.",
+      "Because Tim felt tired, he stayed up to finish his homework."
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: In spite of being tired, Tim stayed up to finish his homework.. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M002",
+    "type": "grammar",
+    "q": "Elena speaks Polish well, she's never been to Poland.",
+    "options": [
+      "Elena speaks Polish well though she's never been to Poland.",
+      "Elena speaks Polish well in spite she's never been to Poland.",
+      "Elena has never been to Poland despite speaks Polish well.",
+      "Elena speaks Polish well because she's never been to Poland."
+    ],
+    "correct": 0,
+    "explain": "Câu gốc nối hai mệnh đề bằng dấu phẩy, nên dùng although/though; đáp án A đúng nghĩa.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M003",
+    "type": "grammar",
+    "q": "Jane kept running, even though she knew she couldn't win.",
+    "options": [
+      "Jane kept running in spite of knowing that she couldn't win.",
+      "Despite of knowing that she couldn't win, Jane kept running.",
+      "Jane kept running because she knew she couldn't win.",
+      "Although Jane kept running but she knew she couldn't win."
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: Jane kept running in spite of knowing that she couldn't win.. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M004",
+    "type": "grammar",
+    "q": "Despite the heat, Diana wore her winter clothes.",
+    "options": [
+      "In spite of the heat, Diana wore her winter clothes.",
+      "Diana wore her winter clothes because of the heat.",
+      "Diana wore her winter clothes despite of the heat.",
+      "Diana wore her winter clothes due to the heat."
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: In spite of the heat, Diana wore her winter clothes.. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M005",
+    "type": "grammar",
+    "q": "Does your father cycle to work?",
+    "options": [
+      "Does your father get to work by bike?",
+      "Does your father go to work on foot?",
+      "Does your father walk to work?",
+      "Does your father go to work by motorbike?"
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: Does your father get to work by bike?. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M006",
+    "type": "grammar",
+    "q": "My father was ill so he stayed at home yesterday.",
+    "options": [
+      "Because my father was ill, he stayed at home yesterday.",
+      "Because my father was ill, so he stayed at home yesterday.",
+      "Despite my father was ill, he stayed at home yesterday.",
+      "As my father was ill, so he stayed at home yesterday."
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: Because my father was ill, he stayed at home yesterday.. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M007",
+    "type": "grammar",
+    "q": "I intend to visit Spain this summer.",
+    "options": [
+      "I'm going to visit Spain this summer.",
+      "I would like to visit Spain this summer.",
+      "I don't want to visit Spain this summer.",
+      "I visited Spain once."
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: I'm going to visit Spain this summer.. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M008",
+    "type": "grammar",
+    "q": "We plan to play volleyball this weekend.",
+    "options": [
+      "We're going to play volleyball this weekend.",
+      "We shouldn't play volleyball this weekend.",
+      "We want to play volleyball this weekend.",
+      "Why don't we play volleyball this weekend?"
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: We're going to play volleyball this weekend.. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M009",
+    "type": "grammar",
+    "q": "How much does an ice-cream cost?",
+    "options": [
+      "What's the price of an ice-cream?",
+      "How many is an ice cream?",
+      "What does the price of an ice-cream cost?",
+      "How much is an ice-cream cost?"
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: What's the price of an ice-cream?. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M010",
+    "type": "grammar",
+    "q": "Let's play volleyball tomorrow afternoon.",
+    "options": [
+      "Why don't we play volleyball tomorrow afternoon?",
+      "We should play volleyball tomorrow afternoon.",
+      "We shouldn't play volleyball this afternoon.",
+      "Do you want to play volleyball this afternoon?"
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: Why don't we play volleyball tomorrow afternoon?. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M011",
+    "type": "grammar",
+    "q": "Let's come to my house after school.",
+    "options": [
+      "What about coming to my house after school?",
+      "You should come to my house after school.",
+      "Please don't come to my house after school.",
+      "We ought to come to my house after school."
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: What about coming to my house after school?. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M012",
+    "type": "grammar",
+    "q": "How about going camping this weekend?",
+    "options": [
+      "Let's go camping this weekend.",
+      "Do you go camping this weekend?",
+      "You should go camping this weekend.",
+      "Don't you like going camping this weekend?"
+    ],
+    "correct": 0,
+    "explain": "Đáp án A: Let's go camping this weekend.. So sánh nghĩa giữa câu gốc và câu viết lại; các phương án khác làm đổi ý hoặc sai cấu trúc.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M013",
+    "type": "vocabulary",
+    "q": "Let's go for a swim as soon as we _____ the hotel.",
+    "options": [
+      "reach",
+      "arrive",
+      "get",
+      "come"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M014",
+    "type": "vocabulary",
+    "q": "It's important to have a sense of _____ or it's easy to get depressed.",
+    "options": [
+      "humour",
+      "laughter",
+      "amusement",
+      "comedy"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M015",
+    "type": "vocabulary",
+    "q": "Alice can't stand waiting in queues. She's very _____.",
+    "options": [
+      "impatient",
+      "patient",
+      "aggressive",
+      "shy"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M016",
+    "type": "vocabulary",
+    "q": "Don't _____ until tomorrow what you can do today.",
+    "options": [
+      "put off",
+      "put on",
+      "put out",
+      "put up with"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M017",
+    "type": "vocabulary",
+    "q": "A _____ is an object that helps you remember a place you have visited.",
+    "options": [
+      "souvenir",
+      "diary",
+      "memory",
+      "gift"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M018",
+    "type": "vocabulary",
+    "q": "If you want to see the dentist, it's best to make _____ with him.",
+    "options": [
+      "an appointment",
+      "an interview",
+      "a date",
+      "a meeting"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M019",
+    "type": "vocabulary",
+    "q": "If you park your car in the wrong place, you have to pay a _____.",
+    "options": [
+      "fine",
+      "money",
+      "fee",
+      "punishment"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M020",
+    "type": "vocabulary",
+    "q": "I like to see \"World News\". That’s my _____.",
+    "options": [
+      "favourite",
+      "popular",
+      "preferable",
+      "preferable"
+    ],
+    "correct": 0,
+    "explain": "“That’s my favourite” chấp nhận khi favourite là danh từ; câu sách hơi thiếu ngữ cảnh.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M021",
+    "type": "vocabulary",
+    "q": "To request more _____ about any of our products and services, please visit our website.",
+    "options": [
+      "information",
+      "news",
+      "brochure",
+      "equipment"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M022",
+    "type": "vocabulary",
+    "q": "I know him by _____, but I have no idea what his name is.",
+    "options": [
+      "sight",
+      "chance",
+      "heart",
+      "myself"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M023",
+    "type": "vocabulary",
+    "q": "Ann refused to take _____ in the preparations for the school concert.",
+    "options": [
+      "part",
+      "place",
+      "notice",
+      "leave"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M024",
+    "type": "vocabulary",
+    "q": "She has a lot of spare time and wants to know how best to _____ it.",
+    "options": [
+      "spend",
+      "save",
+      "waste",
+      "make"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M025",
+    "type": "vocabulary",
+    "q": "He failed to call her and say goodbye because his telephone was _____.",
+    "options": [
+      "out of order",
+      "out of work",
+      "off work",
+      "off duty"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M026",
+    "type": "vocabulary",
+    "q": "The _____ for winning that match is a gold medal.",
+    "options": [
+      "Award",
+      "prizing",
+      "reward",
+      "gift"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M027",
+    "type": "vocabulary",
+    "q": "Mr. Wilson is a very _____ teacher. He's always calm and never gets angry.",
+    "options": [
+      "patient",
+      "strict",
+      "funny",
+      "generous"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M028",
+    "type": "vocabulary",
+    "q": "What's the weather _____ for tomorrow?",
+    "options": [
+      "forecast",
+      "storm",
+      "like",
+      "lightning"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M029",
+    "type": "vocabulary",
+    "q": "You don't have to pay for delivery. It is free of _____.",
+    "options": [
+      "charge",
+      "cost",
+      "fee",
+      "payment"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M030",
+    "type": "vocabulary",
+    "q": "He is very _____ because he is concerned only with his own interests and feelings.",
+    "options": [
+      "confident",
+      "selfish",
+      "helpful",
+      "generous"
+    ],
+    "correct": 1,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M031",
+    "type": "vocabulary",
+    "q": "John wanted a new hobby so he decided to _____ stamp collecting.",
+    "options": [
+      "take over",
+      "take up",
+      "take off",
+      "take in"
+    ],
+    "correct": 1,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M032",
+    "type": "vocabulary",
+    "q": "I often go to the countryside at the weekends. The quiet and _____ atmosphere there calm me down.",
+    "options": [
+      "peaceful",
+      "polluted",
+      "dirty",
+      "noisy"
+    ],
+    "correct": 0,
+    "explain": "Câu sách dùng “atmosphere ... calm me down”; văn phạm chuẩn nên là “atmosphere ... calms me down”. Giữ nguyên nguyên bản.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M033",
+    "type": "vocabulary",
+    "q": "When he was at university, my dad did a _____ in maths.",
+    "options": [
+      "degree",
+      "subject",
+      "study",
+      "certificate"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M034",
+    "type": "vocabulary",
+    "q": "I wanted to buy a drink, but the machine was out of _____.",
+    "options": [
+      "order",
+      "position",
+      "operation",
+      "work"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M035",
+    "type": "vocabulary",
+    "q": "The audience is laughing most of the time in a _____.",
+    "options": [
+      "comedy",
+      "science fiction",
+      "documentary",
+      "soap opera"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M036",
+    "type": "vocabulary",
+    "q": "If something is illegal, it's against the _____.",
+    "options": [
+      "law",
+      "government",
+      "society",
+      "rule"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M037",
+    "type": "vocabulary",
+    "q": "There was an accident, but fortunately no one was _____ injured.",
+    "options": [
+      "seriously",
+      "almost",
+      "dangerously",
+      "exactly"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M038",
+    "type": "vocabulary",
+    "q": "Their income is so low that they are living in _____.",
+    "options": [
+      "poverty",
+      "difficult",
+      "poor",
+      "comfort"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M039",
+    "type": "vocabulary",
+    "q": "Johnny _____ very badly at Mary's birthday party.",
+    "options": [
+      "behaved",
+      "showed",
+      "looked",
+      "operated"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M040",
+    "type": "vocabulary",
+    "q": "Nowadays more and more women go out to work, and they become more _____.",
+    "options": [
+      "independent",
+      "dependent",
+      "independently",
+      "dependently"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M041",
+    "type": "vocabulary",
+    "q": "Don't eat those chips! They're _____.",
+    "options": [
+      "unhealthy",
+      "delicious",
+      "healthy",
+      "tasty"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M042",
+    "type": "vocabulary",
+    "q": "I don't like people who are noisy and _____.",
+    "options": [
+      "aggressive",
+      "confident",
+      "sociable",
+      "generous"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M043",
+    "type": "vocabulary",
+    "q": "Mary is a friendly girl who _____ everyone she meets.",
+    "options": [
+      "gets on with",
+      "gets over",
+      "gets off",
+      "gets up"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M044",
+    "type": "vocabulary",
+    "q": "If we don't meet those deadlines, we're going to be in _____ troubles.",
+    "options": [
+      "big",
+      "heavy",
+      "large",
+      "great"
+    ],
+    "correct": 0,
+    "explain": "Câu sách ghi “in big troubles”; cách nói tự nhiên là “in big trouble”. Đáp án A tốt nhất trong 4 lựa chọn, nhưng câu hỏi gốc cần sửa.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M045",
+    "type": "vocabulary",
+    "q": "If you are _____ Mrs. Rogers, you'll find her in the board room.",
+    "options": [
+      "looking for",
+      "looking after",
+      "looking up",
+      "looking into"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M046",
+    "type": "vocabulary",
+    "q": "Many children are _____ by single parents.",
+    "options": [
+      "brought up",
+      "grown up",
+      "taken care",
+      "looked after"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M047",
+    "type": "vocabulary",
+    "q": "Do you think a _____ for cancer will ever be found?",
+    "options": [
+      "cure",
+      "prescription",
+      "remedy",
+      "recipe"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M048",
+    "type": "vocabulary",
+    "q": "Air _____ is cheaper than other forms of long-distance transport in my country.",
+    "options": [
+      "travel",
+      "trip",
+      "journey",
+      "voyage"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M049",
+    "type": "vocabulary",
+    "q": "Her wedding ring was made of _____.",
+    "options": [
+      "gold",
+      "glass",
+      "cotton",
+      "leather"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M050",
+    "type": "vocabulary",
+    "q": "We don't exchange goods unless you still have the _____.",
+    "options": [
+      "receipt",
+      "bill",
+      "check",
+      "invoice"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M051",
+    "type": "vocabulary",
+    "q": "I _____ some very good photos of our dog with my new camera.",
+    "options": [
+      "took",
+      "made",
+      "shot",
+      "did"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M052",
+    "type": "vocabulary",
+    "q": "My bedroom has a fitted _____ which covers the whole floor.",
+    "options": [
+      "carpet",
+      "sofa",
+      "furniture",
+      "curtain"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M053",
+    "type": "vocabulary",
+    "q": "One way to cook potatoes is to _____ them in a pan of water with a little salt.",
+    "options": [
+      "boil",
+      "fry",
+      "grill",
+      "bake"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M054",
+    "type": "vocabulary",
+    "q": "Don't worry about the washing-up. We'll put everything in the _____.",
+    "options": [
+      "dishwasher",
+      "cupboard",
+      "sink",
+      "washing machine"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M055",
+    "type": "vocabulary",
+    "q": "If you are not satisfied with the service in this store, ask to speak to the _____.",
+    "options": [
+      "manager",
+      "secretary",
+      "shop keeper",
+      "cashier"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M056",
+    "type": "vocabulary",
+    "q": "These _____ are too tight! I'll have to lose some weight!",
+    "options": [
+      "trousers",
+      "shoes",
+      "trainers",
+      "gloves"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M057",
+    "type": "vocabulary",
+    "q": "I have a/an _____ in computer aided design and three years' experience.",
+    "options": [
+      "qualification",
+      "degree",
+      "course",
+      "exam"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M058",
+    "type": "vocabulary",
+    "q": "The hairdryer broke the first time I used it so the store gave me a full _____.",
+    "options": [
+      "refund",
+      "payment",
+      "sale",
+      "discount"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M059",
+    "type": "vocabulary",
+    "q": "Which of the following is NOT a country?",
+    "options": [
+      "French",
+      "Germany",
+      "Sweden",
+      "Turkey"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M060",
+    "type": "vocabulary",
+    "q": "In the desert the air is very dry, but in the jungle, it is _____.",
+    "options": [
+      "humid",
+      "cloud",
+      "flood",
+      "drought"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M061",
+    "type": "vocabulary",
+    "q": "Last year's champions were _____ in the final game 5-3.",
+    "options": [
+      "defeated",
+      "beat",
+      "taken over",
+      "fought"
+    ],
+    "correct": 0,
+    "explain": "Vocabulary and collocations — review the sentence in context.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M062",
+    "type": "vocabulary",
+    "q": "David wants to be a _____ because he absolutely adores cars.",
+    "options": [
+      "racing driver",
+      "motor racer",
+      "car racer",
+      "race driver"
+    ],
+    "correct": 0,
+    "explain": "“racing driver” là danh từ chỉ tay đua xe; D “race driver” không phải đáp án ưu tiên trong văn cảnh.",
+    "passage": ""
+  },
+  {
+    "id": "BOOK_M063",
+    "type": "cloze",
+    "q": "CAMPING — Question 26: Choose the word for gap (26).",
+    "options": [
+      "famous",
+      "popular",
+      "favourite",
+      "current"
+    ],
+    "correct": 1,
+    "explain": "popular: be popular = trở nên phổ biến (to be popular).",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M064",
+    "type": "cloze",
+    "q": "CAMPING — Question 27: Choose the word for gap (27).",
+    "options": [
+      "tools",
+      "baggage",
+      "equipment",
+      "property"
+    ],
+    "correct": 2,
+    "explain": "equipment: dụng cụ/trang thiết bị cắm trại; không phải baggage.",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M065",
+    "type": "cloze",
+    "q": "CAMPING — Question 28: Choose the word for gap (28).",
+    "options": [
+      "ways",
+      "directions",
+      "voyages",
+      "distances"
+    ],
+    "correct": 3,
+    "explain": "distances: travel longer distances = đi quãng đường xa hơn.",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M066",
+    "type": "cloze",
+    "q": "CAMPING — Question 29: Choose the word for gap (29).",
+    "options": [
+      "on",
+      "by",
+      "at",
+      "of"
+    ],
+    "correct": 1,
+    "explain": "by: be by themselves = ở một mình, tự lập.",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M067",
+    "type": "cloze",
+    "q": "CAMPING — Question 30: Choose the word for gap (30).",
+    "options": [
+      "take",
+      "make",
+      "pick",
+      "do"
+    ],
+    "correct": 0,
+    "explain": "make: make themselves comfortable = tự tạo sự thoải mái.",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M068",
+    "type": "cloze",
+    "q": "CAMPING — Question 31: Choose the word for gap (31).",
+    "options": [
+      "where",
+      "who",
+      "which",
+      "when"
+    ],
+    "correct": 2,
+    "explain": "which: đại từ quan hệ thay cho campsite (a campsite which has...).",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M069",
+    "type": "cloze",
+    "q": "CAMPING — Question 32: Choose the word for gap (32).",
+    "options": [
+      "such",
+      "like",
+      "as",
+      "just"
+    ],
+    "correct": 1,
+    "explain": "like: giới thiệu ví dụ, like hot showers and swimming pools; such phải đi cùng as.",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M070",
+    "type": "cloze",
+    "q": "CAMPING — Question 33: Choose the word for gap (33).",
+    "options": [
+      "lonely",
+      "single",
+      "separate",
+      "alone"
+    ],
+    "correct": 3,
+    "explain": "separate: separate from = tách biệt khỏi.",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M071",
+    "type": "cloze",
+    "q": "CAMPING — Question 34: Choose the word for gap (34).",
+    "options": [
+      "remain",
+      "stay",
+      "leave",
+      "let"
+    ],
+    "correct": 2,
+    "explain": "leave: leave the area clean and tidy = giữ khu vực sạch khi rời đi.",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M072",
+    "type": "cloze",
+    "q": "CAMPING — Question 35: Choose the word for gap (35).",
+    "options": [
+      "wild",
+      "natural",
+      "loose",
+      "free"
+    ],
+    "correct": 0,
+    "explain": "wild: wild animals = động vật hoang dã.",
+    "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
+  },
+  {
+    "id": "BOOK_M073",
+    "type": "cloze",
+    "q": "HONEY — Question 26: Choose the word for gap (26).",
+    "options": [
+      "involves",
+      "contains",
+      "includes",
+      "consists"
+    ],
+    "correct": 3,
+    "explain": "consists: consist of = bao gồm; chủ ngữ It chia consists.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M074",
+    "type": "cloze",
+    "q": "HONEY — Question 27: Choose the word for gap (27).",
+    "options": [
+      "well",
+      "long",
+      "soon",
+      "far"
+    ],
+    "correct": 3,
+    "explain": "far: as far as = xa tới mức; nói về số km.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M075",
+    "type": "cloze",
+    "q": "HONEY — Question 28: Choose the word for gap (28).",
+    "options": [
+      "to",
+      "on",
+      "for",
+      "with"
+    ],
+    "correct": 1,
+    "explain": "on: depend on = phụ thuộc vào.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M076",
+    "type": "cloze",
+    "q": "HONEY — Question 29: Choose the word for gap (29).",
+    "options": [
+      "case",
+      "order",
+      "fact",
+      "place"
+    ],
+    "correct": 2,
+    "explain": "fact: in fact = thực tế là.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M077",
+    "type": "cloze",
+    "q": "HONEY — Question 30: Choose the word for gap (30).",
+    "options": [
+      "varieties",
+      "collections",
+      "sets",
+      "differences"
+    ],
+    "correct": 0,
+    "explain": "varieties: varieties of honey = các loại mật ong.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M078",
+    "type": "cloze",
+    "q": "HONEY — Question 31: Choose the word for gap (31).",
+    "options": [
+      "seasons",
+      "times",
+      "years",
+      "dates"
+    ],
+    "correct": 1,
+    "explain": "times: in ancient times = thời cổ đại.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M079",
+    "type": "cloze",
+    "q": "HONEY — Question 32: Choose the word for gap (32).",
+    "options": [
+      "distant",
+      "rare",
+      "small",
+      "slim"
+    ],
+    "correct": 1,
+    "explain": "rare: sugar was very rare = đường rất hiếm.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M080",
+    "type": "cloze",
+    "q": "HONEY — Question 33: Choose the word for gap (33).",
+    "options": [
+      "cost",
+      "price",
+      "value",
+      "charge"
+    ],
+    "correct": 2,
+    "explain": "value: be of great value to = rất có giá trị đối với.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M081",
+    "type": "cloze",
+    "q": "HONEY — Question 34: Choose the word for gap (34).",
+    "options": [
+      "all",
+      "some",
+      "most",
+      "every"
+    ],
+    "correct": 3,
+    "explain": "every: in every part of the world = ở mọi nơi trên thế giới.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M082",
+    "type": "cloze",
+    "q": "HONEY — Question 35: Choose the word for gap (35).",
+    "options": [
+      "shall",
+      "need",
+      "can",
+      "ought"
+    ],
+    "correct": 2,
+    "explain": "can: it can be taken = nó có thể được sử dụng; thể bị động với can.",
+    "passage": "Honey is a sweet liquid (0) _____ by bees. It (26) _____ of water and sugars. Bees may travel as (27) _____ as seventy-five thousand kilometres and visit over two million flowers to produce just half a kilo of honey. The colour and flavour of honey depend (28) _____ the type of flower visited. In (29) _____, there are more than three hundred (30) _____ of honey.\nThe lighter-coloured ones are generally milder in flavour than darker honey.\nIn ancient (31) _____, honey was the main sweet food, as sugar was very (32) _____. Honey was of great (33) _____ to the ancient Egyptians, who used it as payment.\nToday, honey is produced and eaten in (34) _____ part of the world. Research suggests that it prevents tiredness and improves athletic performance. However, honey is not just food — it (35) _____ be taken for sore throats and is used in many skin and hair-care products."
+  },
+  {
+    "id": "BOOK_M083",
+    "type": "cloze",
+    "q": "MONEY — Question 26: Choose the word for gap (26).",
+    "options": [
+      "other",
+      "else",
+      "another",
+      "apart"
+    ],
+    "correct": 1,
+    "explain": "else: something else = một thứ khác.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M084",
+    "type": "cloze",
+    "q": "MONEY — Question 27: Choose the word for gap (27).",
+    "options": [
+      "couple",
+      "double",
+      "few",
+      "several"
+    ],
+    "correct": 0,
+    "explain": "couple: a couple of cinema tickets = một cặp/hai vé xem phim.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M085",
+    "type": "cloze",
+    "q": "MONEY — Question 28: Choose the word for gap (28).",
+    "options": [
+      "slice",
+      "part",
+      "side",
+      "piece"
+    ],
+    "correct": 3,
+    "explain": "piece: a printed piece of paper = một mảnh/tờ giấy.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M086",
+    "type": "cloze",
+    "q": "MONEY — Question 29: Choose the word for gap (29).",
+    "options": [
+      "since",
+      "past",
+      "before",
+      "ago"
+    ],
+    "correct": 3,
+    "explain": "ago: thousands of years ago = hàng nghìn năm trước.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M087",
+    "type": "cloze",
+    "q": "MONEY — Question 30: Choose the word for gap (30).",
+    "options": [
+      "them",
+      "it",
+      "some",
+      "that"
+    ],
+    "correct": 1,
+    "explain": "it: as we know it = như cách chúng ta biết đến nó.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M088",
+    "type": "cloze",
+    "q": "MONEY — Question 31: Choose the word for gap (31).",
+    "options": [
+      "or",
+      "neither",
+      "and",
+      "but"
+    ],
+    "correct": 0,
+    "explain": "or: no banks or even shops; trong câu phủ định dùng or để nối.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M089",
+    "type": "cloze",
+    "q": "MONEY — Question 32: Choose the word for gap (32).",
+    "options": [
+      "did",
+      "was",
+      "had",
+      "has"
+    ],
+    "correct": 2,
+    "explain": "had: he had grown = anh ấy đã trồng (trước lúc trao đổi), quá khứ hoàn thành.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M090",
+    "type": "cloze",
+    "q": "MONEY — Question 33: Choose the word for gap (33).",
+    "options": [
+      "jobs",
+      "people",
+      "things",
+      "goods"
+    ],
+    "correct": 1,
+    "explain": "people: between two people = giữa hai người.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M091",
+    "type": "cloze",
+    "q": "MONEY — Question 34: Choose the word for gap (34).",
+    "options": [
+      "for",
+      "by",
+      "because",
+      "so"
+    ],
+    "correct": 3,
+    "explain": "so: so that + mệnh đề = để mà/chỉ mục đích.",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  },
+  {
+    "id": "BOOK_M092",
+    "type": "cloze",
+    "q": "MONEY — Question 35: Choose the word for gap (35).",
+    "options": [
+      "tomorrow",
+      "today",
+      "recently",
+      "soon"
+    ],
+    "correct": 1,
+    "explain": "today: today everyone uses... = ngày nay mọi người dùng...",
+    "passage": "What is money? The pound, the dollar or the euro are actually just (0) _____ a gram or a kilometre. The difference is that you can exchange money for something (26) _____. A ten pound note may buy a book, a huge bag of sweets, or a (27) _____ of cinema tickets. But the note itself is only a printed (28) _____ of paper which costs almost nothing to make. Thousands of years (29) _____, people didn't have money as we know (30) _____. There were no banks (31) _____ even shops. In those days, Mr Green the farmer exchanged the corn he (32) _____ grown for Mr Hive's honey. This was an exchange arranged between two (33) _____, each of whom had something that the other wanted. But in time, most societies invented their own 'currencies' (34) _____ that people could exchange more. The different currencies began to join together, which is why (35) _____ everyone uses the same currency in their country."
+  }
 ];
-let mcqs=rawMCQ.map((a,i)=>({id:'M'+(i+1),type:a[0],q:a[1],options:a[2],correct:a[3],explain:a[4],passage:a[5]||''}));
-const rwRaw=[
-['It is not necessary for you to bring a laptop.','You do not have to bring a laptop.','Use “have to”.'],
-['I last saw Mary three years ago.','I have not seen Mary for three years.','Begin with “I have not”.'],
-['Despite the heavy rain, they went hiking.','Although it was raining heavily, they went hiking.','Begin with “Although”.'],
-['This is the first time I have visited London.','I have never visited London before.','Begin with “I have never”.'],
-['She is too young to drive a car.','She is not old enough to drive a car.','Use “enough”.'],
-['He started learning English five years ago.','He has been learning English for five years.','Use “has been”.'],
-['The test was so difficult that nobody passed it.','It was such a difficult test that nobody passed it.','Use “such”.'],
-['People believe that he is an excellent teacher.','He is believed to be an excellent teacher.','Begin with “He”.'],
-['I regret not studying harder.','I wish I had studied harder.','Begin with “I wish”.'],
-['She did not go out because she was ill.','If she had not been ill, she would have gone out.','Use conditional type 3.'],
-['They cancelled the concert because of the storm.','The concert was cancelled because of the storm.','Begin with “The concert”.'],
-['I prefer tea to coffee.','I would rather drink tea than coffee.','Use “would rather”.'],
-['He was exhausted, but he finished his work.','Although he was exhausted, he finished his work.','Begin with “Although”.'],
-['The last time we travelled abroad was in 2022.','We have not travelled abroad since 2022.','Use “since”.'],
-['This exercise is easier than the previous one.','The previous exercise is more difficult than this one.','Begin with “The previous exercise”.'],
-['Why do you not apply for the scholarship?','If I were you, I would apply for the scholarship.','Use “If I were you”.'],
-['They will announce the results tomorrow.','The results will be announced tomorrow.','Change to passive voice.'],
-['He succeeded although he had little experience.','In spite of having little experience, he succeeded.','Use “In spite of”.'],
-['I cannot afford to buy that phone.','That phone is too expensive for me to buy.','Use “too”.'],
-['The teacher made us rewrite the essay.','We were made to rewrite the essay by the teacher.','Begin with “We were made”.'],
-['As soon as I arrived, it started raining.','No sooner had I arrived than it started raining.','Begin with “No sooner”.'],
-['He speaks English more fluently than I do.','I do not speak English as fluently as he does.','Use “as ... as”.'],
-['It is a pity that I cannot join the trip.','I wish I could join the trip.','Begin with “I wish”.'],
-['They have not finished the bridge yet.','The bridge has not been finished yet.','Change to passive voice.'],
-['He does not work hard, so he cannot get promoted.','If he worked hard, he could get promoted.','Use conditional type 2.']
+let rewrites = [
+  {
+    "id": "W1",
+    "q": "It is not necessary for you to bring a laptop.",
+    "answer": "You do not have to bring a laptop.",
+    "hint": "Use “have to”."
+  },
+  {
+    "id": "W2",
+    "q": "I last saw Mary three years ago.",
+    "answer": "I have not seen Mary for three years.",
+    "hint": "Begin with “I have not”."
+  },
+  {
+    "id": "W3",
+    "q": "Despite the heavy rain, they went hiking.",
+    "answer": "Although it was raining heavily, they went hiking.",
+    "hint": "Begin with “Although”."
+  },
+  {
+    "id": "W4",
+    "q": "This is the first time I have visited London.",
+    "answer": "I have never visited London before.",
+    "hint": "Begin with “I have never”."
+  },
+  {
+    "id": "W5",
+    "q": "She is too young to drive a car.",
+    "answer": "She is not old enough to drive a car.",
+    "hint": "Use “enough”."
+  },
+  {
+    "id": "W6",
+    "q": "He started learning English five years ago.",
+    "answer": "He has been learning English for five years.",
+    "hint": "Use “has been”."
+  },
+  {
+    "id": "W7",
+    "q": "The test was so difficult that nobody passed it.",
+    "answer": "It was such a difficult test that nobody passed it.",
+    "hint": "Use “such”."
+  },
+  {
+    "id": "W8",
+    "q": "People believe that he is an excellent teacher.",
+    "answer": "He is believed to be an excellent teacher.",
+    "hint": "Begin with “He”."
+  },
+  {
+    "id": "W9",
+    "q": "I regret not studying harder.",
+    "answer": "I wish I had studied harder.",
+    "hint": "Begin with “I wish”."
+  },
+  {
+    "id": "W10",
+    "q": "She did not go out because she was ill.",
+    "answer": "If she had not been ill, she would have gone out.",
+    "hint": "Use conditional type 3."
+  },
+  {
+    "id": "W11",
+    "q": "They cancelled the concert because of the storm.",
+    "answer": "The concert was cancelled because of the storm.",
+    "hint": "Begin with “The concert”."
+  },
+  {
+    "id": "W12",
+    "q": "I prefer tea to coffee.",
+    "answer": "I would rather drink tea than coffee.",
+    "hint": "Use “would rather”."
+  },
+  {
+    "id": "W13",
+    "q": "He was exhausted, but he finished his work.",
+    "answer": "Although he was exhausted, he finished his work.",
+    "hint": "Begin with “Although”."
+  },
+  {
+    "id": "W14",
+    "q": "The last time we travelled abroad was in 2022.",
+    "answer": "We have not travelled abroad since 2022.",
+    "hint": "Use “since”."
+  },
+  {
+    "id": "W15",
+    "q": "This exercise is easier than the previous one.",
+    "answer": "The previous exercise is more difficult than this one.",
+    "hint": "Begin with “The previous exercise”."
+  },
+  {
+    "id": "W16",
+    "q": "Why do you not apply for the scholarship?",
+    "answer": "If I were you, I would apply for the scholarship.",
+    "hint": "Use “If I were you”."
+  },
+  {
+    "id": "W17",
+    "q": "They will announce the results tomorrow.",
+    "answer": "The results will be announced tomorrow.",
+    "hint": "Change to passive voice."
+  },
+  {
+    "id": "W18",
+    "q": "He succeeded although he had little experience.",
+    "answer": "In spite of having little experience, he succeeded.",
+    "hint": "Use “In spite of”."
+  },
+  {
+    "id": "W19",
+    "q": "I cannot afford to buy that phone.",
+    "answer": "That phone is too expensive for me to buy.",
+    "hint": "Use “too”."
+  },
+  {
+    "id": "W20",
+    "q": "The teacher made us rewrite the essay.",
+    "answer": "We were made to rewrite the essay by the teacher.",
+    "hint": "Begin with “We were made”."
+  },
+  {
+    "id": "W21",
+    "q": "As soon as I arrived, it started raining.",
+    "answer": "No sooner had I arrived than it started raining.",
+    "hint": "Begin with “No sooner”."
+  },
+  {
+    "id": "W22",
+    "q": "He speaks English more fluently than I do.",
+    "answer": "I do not speak English as fluently as he does.",
+    "hint": "Use “as ... as”."
+  },
+  {
+    "id": "W23",
+    "q": "It is a pity that I cannot join the trip.",
+    "answer": "I wish I could join the trip.",
+    "hint": "Begin with “I wish”."
+  },
+  {
+    "id": "W24",
+    "q": "They have not finished the bridge yet.",
+    "answer": "The bridge has not been finished yet.",
+    "hint": "Change to passive voice."
+  },
+  {
+    "id": "W25",
+    "q": "He does not work hard, so he cannot get promoted.",
+    "answer": "If he worked hard, he could get promoted.",
+    "hint": "Use conditional type 2."
+  },
+  {
+    "id": "BOOK_R001",
+    "q": "Although Tim felt tired, he stayed up to finish his homework.",
+    "answer": "In spite of being tired, Tim stayed up to finish his homework.",
+    "hint": "Gợi ý: In spite of being tired, Tim stayed up to finish his homework. — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R002",
+    "q": "Elena speaks Polish well, she's never been to Poland.",
+    "answer": "Elena speaks Polish well though she's never been to Poland.",
+    "hint": "Gợi ý: Elena speaks Polish well though she's never been to Poland. — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R003",
+    "q": "Jane kept running, even though she knew she couldn't win.",
+    "answer": "Jane kept running in spite of knowing that she couldn't win.",
+    "hint": "Gợi ý: Jane kept running in spite of knowing that she couldn't win. — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R004",
+    "q": "Despite the heat, Diana wore her winter clothes.",
+    "answer": "In spite of the heat, Diana wore her winter clothes.",
+    "hint": "Gợi ý: In spite of the heat, Diana wore her winter clothes. — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R005",
+    "q": "Does your father cycle to work?",
+    "answer": "Does your father get to work by bike?",
+    "hint": "Gợi ý: Does your father get to work by bike? — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R006",
+    "q": "My father was ill so he stayed at home yesterday.",
+    "answer": "Because my father was ill, he stayed at home yesterday.",
+    "hint": "Gợi ý: Because my father was ill, he stayed at home yesterday. — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R007",
+    "q": "I intend to visit Spain this summer.",
+    "answer": "I'm going to visit Spain this summer.",
+    "hint": "Gợi ý: I'm going to visit Spain this summer. — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R008",
+    "q": "We plan to play volleyball this weekend.",
+    "answer": "We're going to play volleyball this weekend.",
+    "hint": "Gợi ý: We're going to play volleyball this weekend. — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R009",
+    "q": "How much does an ice-cream cost?",
+    "answer": "What's the price of an ice-cream?",
+    "hint": "Gợi ý: What's the price of an ice-cream? — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R010",
+    "q": "Let's play volleyball tomorrow afternoon.",
+    "answer": "Why don't we play volleyball tomorrow afternoon?",
+    "hint": "Gợi ý: Why don't we play volleyball tomorrow afternoon? — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R011",
+    "q": "Let's come to my house after school.",
+    "answer": "What about coming to my house after school?",
+    "hint": "Gợi ý: What about coming to my house after school? — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  },
+  {
+    "id": "BOOK_R012",
+    "q": "How about going camping this weekend?",
+    "answer": "Let's go camping this weekend.",
+    "hint": "Gợi ý: Let's go camping this weekend. — So sánh cấu trúc và nghĩa với câu gốc; có thể tồn tại đáp án tương đương khác."
+  }
 ];
-let rewrites=rwRaw.map((a,i)=>({id:'W'+(i+1),q:a[0],answer:a[1],hint:a[2]}));
