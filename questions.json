@@ -1,916 +1,6 @@
 {
   "mcqs": [
     {
-      "id": "M1",
-      "type": "grammar",
-      "q": "If I _____ enough money, I would study abroad.",
-      "options": [
-        "have",
-        "had",
-        "will have",
-        "would have"
-      ],
-      "correct": 1,
-      "explain": "Câu điều kiện loại 2: If + quá khứ đơn, would + động từ nguyên mẫu.",
-      "passage": ""
-    },
-    {
-      "id": "M2",
-      "type": "grammar",
-      "q": "By the time we arrived, the film _____.",
-      "options": [
-        "starts",
-        "has started",
-        "had started",
-        "was starting"
-      ],
-      "correct": 2,
-      "explain": "Past perfect diễn tả hành động xảy ra trước một thời điểm quá khứ.",
-      "passage": ""
-    },
-    {
-      "id": "M3",
-      "type": "grammar",
-      "q": "She suggested _____ a taxi to the airport.",
-      "options": [
-        "take",
-        "to take",
-        "taking",
-        "taken"
-      ],
-      "correct": 2,
-      "explain": "Suggest + V-ing.",
-      "passage": ""
-    },
-    {
-      "id": "M4",
-      "type": "grammar",
-      "q": "Hardly _____ the room when the phone rang.",
-      "options": [
-        "I had entered",
-        "had I entered",
-        "I entered",
-        "did I entered"
-      ],
-      "correct": 1,
-      "explain": "Đảo ngữ: Hardly had + S + V3 + when...",
-      "passage": ""
-    },
-    {
-      "id": "M5",
-      "type": "grammar",
-      "q": "The report _____ by Friday afternoon.",
-      "options": [
-        "must submit",
-        "must be submitted",
-        "must be submit",
-        "must submitted"
-      ],
-      "correct": 1,
-      "explain": "Modal passive: must + be + V3.",
-      "passage": ""
-    },
-    {
-      "id": "M6",
-      "type": "grammar",
-      "q": "He is used to _____ up early.",
-      "options": [
-        "get",
-        "getting",
-        "got",
-        "to get"
-      ],
-      "correct": 1,
-      "explain": "Be used to + V-ing: quen với điều gì.",
-      "passage": ""
-    },
-    {
-      "id": "M7",
-      "type": "grammar",
-      "q": "Neither the manager nor the employees _____ aware of the change.",
-      "options": [
-        "was",
-        "is",
-        "were",
-        "has"
-      ],
-      "correct": 2,
-      "explain": "Động từ hòa hợp với chủ ngữ gần nhất: employees → were.",
-      "passage": ""
-    },
-    {
-      "id": "M8",
-      "type": "grammar",
-      "q": "The woman _____ car was stolen called the police.",
-      "options": [
-        "who",
-        "whom",
-        "whose",
-        "which"
-      ],
-      "correct": 2,
-      "explain": "Whose biểu thị quan hệ sở hữu.",
-      "passage": ""
-    },
-    {
-      "id": "M9",
-      "type": "grammar",
-      "q": "I wish I _____ more time to finish the assignment.",
-      "options": [
-        "have",
-        "had",
-        "will have",
-        "having"
-      ],
-      "correct": 1,
-      "explain": "Wish ở hiện tại: wish + quá khứ đơn.",
-      "passage": ""
-    },
-    {
-      "id": "M10",
-      "type": "grammar",
-      "q": "You _____ have told me earlier; I could have helped.",
-      "options": [
-        "should",
-        "must",
-        "may",
-        "can"
-      ],
-      "correct": 0,
-      "explain": "Should have + V3: lẽ ra nên làm điều gì.",
-      "passage": ""
-    },
-    {
-      "id": "M11",
-      "type": "grammar",
-      "q": "Not only _____ French, but she also speaks German.",
-      "options": [
-        "she speaks",
-        "does she speak",
-        "speaks she",
-        "she does speak"
-      ],
-      "correct": 1,
-      "explain": "Đảo ngữ sau Not only ở đầu câu.",
-      "passage": ""
-    },
-    {
-      "id": "M12",
-      "type": "grammar",
-      "q": "The more you practise, _____ you become.",
-      "options": [
-        "the confident",
-        "more confident",
-        "the more confident",
-        "most confident"
-      ],
-      "correct": 2,
-      "explain": "So sánh kép: The + comparative, the + comparative.",
-      "passage": ""
-    },
-    {
-      "id": "M13",
-      "type": "grammar",
-      "q": "He denied _____ the confidential document.",
-      "options": [
-        "to leak",
-        "leaking",
-        "leak",
-        "leaked"
-      ],
-      "correct": 1,
-      "explain": "Deny + V-ing.",
-      "passage": ""
-    },
-    {
-      "id": "M14",
-      "type": "grammar",
-      "q": "I would rather you _____ here tomorrow.",
-      "options": [
-        "come",
-        "came",
-        "will come",
-        "coming"
-      ],
-      "correct": 1,
-      "explain": "Would rather + someone + past simple cho mong muốn.",
-      "passage": ""
-    },
-    {
-      "id": "M15",
-      "type": "grammar",
-      "q": "The meeting has been postponed _____ further notice.",
-      "options": [
-        "by",
-        "until",
-        "for",
-        "since"
-      ],
-      "correct": 1,
-      "explain": "Until further notice: cho đến khi có thông báo mới.",
-      "passage": ""
-    },
-    {
-      "id": "M16",
-      "type": "grammar",
-      "q": "The book, _____ I borrowed from the library, was fascinating.",
-      "options": [
-        "that",
-        "what",
-        "which",
-        "whose"
-      ],
-      "correct": 2,
-      "explain": "Mệnh đề quan hệ không xác định dùng which sau dấu phẩy.",
-      "passage": ""
-    },
-    {
-      "id": "M17",
-      "type": "grammar",
-      "q": "If she had studied harder, she _____ the test.",
-      "options": [
-        "passes",
-        "would pass",
-        "would have passed",
-        "had passed"
-      ],
-      "correct": 2,
-      "explain": "Điều kiện loại 3: would have + V3.",
-      "passage": ""
-    },
-    {
-      "id": "M18",
-      "type": "grammar",
-      "q": "He has worked here _____ 2020.",
-      "options": [
-        "for",
-        "since",
-        "during",
-        "from"
-      ],
-      "correct": 1,
-      "explain": "Since + mốc thời gian.",
-      "passage": ""
-    },
-    {
-      "id": "M19",
-      "type": "grammar",
-      "q": "Despite _____ tired, she continued working.",
-      "options": [
-        "be",
-        "being",
-        "was",
-        "to be"
-      ],
-      "correct": 1,
-      "explain": "Despite + danh từ/V-ing.",
-      "passage": ""
-    },
-    {
-      "id": "M20",
-      "type": "grammar",
-      "q": "No sooner had I sat down _____ the doorbell rang.",
-      "options": [
-        "when",
-        "than",
-        "then",
-        "that"
-      ],
-      "correct": 1,
-      "explain": "No sooner ... than ...",
-      "passage": ""
-    },
-    {
-      "id": "M21",
-      "type": "grammar",
-      "q": "You had better _____ a doctor.",
-      "options": [
-        "seeing",
-        "to see",
-        "see",
-        "seen"
-      ],
-      "correct": 2,
-      "explain": "Had better + nguyên mẫu không to.",
-      "passage": ""
-    },
-    {
-      "id": "M22",
-      "type": "grammar",
-      "q": "The project is believed _____ completed next month.",
-      "options": [
-        "to be",
-        "being",
-        "be",
-        "to have"
-      ],
-      "correct": 0,
-      "explain": "Be believed + to-infinitive; passive: to be completed.",
-      "passage": ""
-    },
-    {
-      "id": "M23",
-      "type": "grammar",
-      "q": "I look forward to _____ from you soon.",
-      "options": [
-        "hear",
-        "hearing",
-        "heard",
-        "be heard"
-      ],
-      "correct": 1,
-      "explain": "Look forward to + V-ing.",
-      "passage": ""
-    },
-    {
-      "id": "M24",
-      "type": "grammar",
-      "q": "There is little point in _____ about the past.",
-      "options": [
-        "worry",
-        "worried",
-        "worrying",
-        "to worry"
-      ],
-      "correct": 2,
-      "explain": "There is little point in + V-ing.",
-      "passage": ""
-    },
-    {
-      "id": "M25",
-      "type": "grammar",
-      "q": "It is essential that every student _____ on time.",
-      "options": [
-        "is",
-        "be",
-        "was",
-        "being"
-      ],
-      "correct": 1,
-      "explain": "Subjunctive: It is essential that + S + base verb.",
-      "passage": ""
-    },
-    {
-      "id": "M26",
-      "type": "vocabulary",
-      "q": "Her presentation was so _____ that everyone paid attention.",
-      "options": [
-        "compelling",
-        "compulsory",
-        "temporary",
-        "ordinary"
-      ],
-      "correct": 0,
-      "explain": "Compelling = thuyết phục, thu hút.",
-      "passage": ""
-    },
-    {
-      "id": "M27",
-      "type": "vocabulary",
-      "q": "We need to _____ a solution before the deadline.",
-      "options": [
-        "come up with",
-        "put up with",
-        "look down on",
-        "get away with"
-      ],
-      "correct": 0,
-      "explain": "Come up with = nghĩ ra, đề xuất.",
-      "passage": ""
-    },
-    {
-      "id": "M28",
-      "type": "vocabulary",
-      "q": "The new policy will have a significant _____ on small businesses.",
-      "options": [
-        "affect",
-        "effect",
-        "effort",
-        "affection"
-      ],
-      "correct": 1,
-      "explain": "Have an effect on = tác động lên.",
-      "passage": ""
-    },
-    {
-      "id": "M29",
-      "type": "vocabulary",
-      "q": "His explanation was _____; nobody could understand it.",
-      "options": [
-        "straightforward",
-        "ambiguous",
-        "accurate",
-        "relevant"
-      ],
-      "correct": 1,
-      "explain": "Ambiguous = mơ hồ, đa nghĩa.",
-      "passage": ""
-    },
-    {
-      "id": "M30",
-      "type": "vocabulary",
-      "q": "She has a strong _____ of responsibility.",
-      "options": [
-        "sense",
-        "feeling",
-        "thought",
-        "mind"
-      ],
-      "correct": 0,
-      "explain": "Collocation: a sense of responsibility.",
-      "passage": ""
-    },
-    {
-      "id": "M31",
-      "type": "vocabulary",
-      "q": "The company plans to _____ its operations into Asia.",
-      "options": [
-        "extend",
-        "expand",
-        "increase",
-        "spread out"
-      ],
-      "correct": 1,
-      "explain": "Expand operations = mở rộng hoạt động kinh doanh.",
-      "passage": ""
-    },
-    {
-      "id": "M32",
-      "type": "vocabulary",
-      "q": "The lecture was _____ because it provided new insights.",
-      "options": [
-        "insightful",
-        "insensitive",
-        "inefficient",
-        "indifferent"
-      ],
-      "correct": 0,
-      "explain": "Insightful = sâu sắc.",
-      "passage": ""
-    },
-    {
-      "id": "M33",
-      "type": "vocabulary",
-      "q": "He finally managed to _____ his fear of public speaking.",
-      "options": [
-        "overcome",
-        "overtake",
-        "overlook",
-        "overhear"
-      ],
-      "correct": 0,
-      "explain": "Overcome fear = vượt qua nỗi sợ.",
-      "passage": ""
-    },
-    {
-      "id": "M34",
-      "type": "vocabulary",
-      "q": "We should take the long-term consequences into _____.",
-      "options": [
-        "account",
-        "reason",
-        "attention",
-        "interest"
-      ],
-      "correct": 0,
-      "explain": "Take ... into account = cân nhắc.",
-      "passage": ""
-    },
-    {
-      "id": "M35",
-      "type": "vocabulary",
-      "q": "They had to _____ the event due to bad weather.",
-      "options": [
-        "call off",
-        "carry on",
-        "bring up",
-        "take after"
-      ],
-      "correct": 0,
-      "explain": "Call off = hủy bỏ.",
-      "passage": ""
-    },
-    {
-      "id": "M36",
-      "type": "vocabulary",
-      "q": "The scientist made a major _____ in renewable energy research.",
-      "options": [
-        "breakdown",
-        "breakthrough",
-        "breakout",
-        "break-in"
-      ],
-      "correct": 1,
-      "explain": "Breakthrough = đột phá.",
-      "passage": ""
-    },
-    {
-      "id": "M37",
-      "type": "vocabulary",
-      "q": "Reliable information is _____ for making good decisions.",
-      "options": [
-        "essential",
-        "optional",
-        "random",
-        "minor"
-      ],
-      "correct": 0,
-      "explain": "Essential = thiết yếu.",
-      "passage": ""
-    },
-    {
-      "id": "M38",
-      "type": "vocabulary",
-      "q": "The two proposals are _____ in terms of cost.",
-      "options": [
-        "comparable",
-        "compassionate",
-        "competitive",
-        "complimentary"
-      ],
-      "correct": 0,
-      "explain": "Comparable = có thể so sánh.",
-      "passage": ""
-    },
-    {
-      "id": "M39",
-      "type": "vocabulary",
-      "q": "The teacher encouraged students to _____ their opinions.",
-      "options": [
-        "express",
-        "expose",
-        "extend",
-        "extract"
-      ],
-      "correct": 0,
-      "explain": "Express opinions = bày tỏ quan điểm.",
-      "passage": ""
-    },
-    {
-      "id": "M40",
-      "type": "vocabulary",
-      "q": "The team worked hard to meet the tight _____.",
-      "options": [
-        "deadline",
-        "timeline",
-        "lifeline",
-        "headline"
-      ],
-      "correct": 0,
-      "explain": "Meet the deadline = hoàn thành đúng hạn.",
-      "passage": ""
-    },
-    {
-      "id": "M41",
-      "type": "vocabulary",
-      "q": "The charity relies on _____ from the public.",
-      "options": [
-        "donations",
-        "debts",
-        "expenses",
-        "profits"
-      ],
-      "correct": 0,
-      "explain": "Donations = tiền/vật phẩm quyên góp.",
-      "passage": ""
-    },
-    {
-      "id": "M42",
-      "type": "vocabulary",
-      "q": "You should _____ the pros and cons before choosing a major.",
-      "options": [
-        "weigh up",
-        "bring out",
-        "turn down",
-        "hold on"
-      ],
-      "correct": 0,
-      "explain": "Weigh up = cân nhắc kỹ.",
-      "passage": ""
-    },
-    {
-      "id": "M43",
-      "type": "vocabulary",
-      "q": "Although they disagreed, they eventually reached a _____.",
-      "options": [
-        "compromise",
-        "competition",
-        "complaint",
-        "comparison"
-      ],
-      "correct": 0,
-      "explain": "Reach a compromise = đạt thỏa hiệp.",
-      "passage": ""
-    },
-    {
-      "id": "M44",
-      "type": "vocabulary",
-      "q": "The documentary raises _____ about plastic waste.",
-      "options": [
-        "awareness",
-        "attention",
-        "knowledge",
-        "recognition"
-      ],
-      "correct": 0,
-      "explain": "Raise awareness = nâng cao nhận thức.",
-      "passage": ""
-    },
-    {
-      "id": "M45",
-      "type": "vocabulary",
-      "q": "This software is not _____ with older devices.",
-      "options": [
-        "compatible",
-        "capable",
-        "comfortable",
-        "considerable"
-      ],
-      "correct": 0,
-      "explain": "Compatible with = tương thích với.",
-      "passage": ""
-    },
-    {
-      "id": "M46",
-      "type": "cloze",
-      "q": "Learning a language requires regular _____.",
-      "options": [
-        "practice",
-        "practise",
-        "practical",
-        "practised"
-      ],
-      "correct": 0,
-      "explain": "Practice (noun) = sự luyện tập.",
-      "passage": "Learning a second language takes time and patience. Regular (1)_____ helps learners become more confident."
-    },
-    {
-      "id": "M47",
-      "type": "cloze",
-      "q": "It is important to _____ realistic learning goals.",
-      "options": [
-        "set",
-        "make",
-        "do",
-        "put"
-      ],
-      "correct": 0,
-      "explain": "Set goals = đặt mục tiêu.",
-      "passage": "Students often make progress when they (1)_____ realistic goals and review them weekly."
-    },
-    {
-      "id": "M48",
-      "type": "cloze",
-      "q": "A good sleep routine can improve your ability to _____.",
-      "options": [
-        "concentrate",
-        "concentration",
-        "concentrated",
-        "concentrating"
-      ],
-      "correct": 0,
-      "explain": "Ability to + verb.",
-      "passage": "Many students underestimate sleep. Getting enough rest helps them (1)_____ better during exams."
-    },
-    {
-      "id": "M49",
-      "type": "cloze",
-      "q": "Online education makes resources more _____ to learners.",
-      "options": [
-        "accessible",
-        "acceptable",
-        "accountable",
-        "adaptable"
-      ],
-      "correct": 0,
-      "explain": "Accessible to = dễ tiếp cận.",
-      "passage": "With a phone and an internet connection, digital resources are more (1)_____ than ever."
-    },
-    {
-      "id": "M50",
-      "type": "cloze",
-      "q": "The project was successful _____ the limited budget.",
-      "options": [
-        "although",
-        "despite",
-        "because",
-        "however"
-      ],
-      "correct": 1,
-      "explain": "Despite + noun phrase.",
-      "passage": "The volunteers organized an impressive event (1)_____ having very little money."
-    },
-    {
-      "id": "M51",
-      "type": "cloze",
-      "q": "Cities can reduce pollution by _____ public transport.",
-      "options": [
-        "promoting",
-        "promoted",
-        "promote",
-        "promotion"
-      ],
-      "correct": 0,
-      "explain": "By + V-ing.",
-      "passage": "One way to make cities greener is by (1)_____ buses and trains instead of private cars."
-    },
-    {
-      "id": "M52",
-      "type": "cloze",
-      "q": "People are more likely to succeed when they remain _____.",
-      "options": [
-        "motivated",
-        "motivation",
-        "motivate",
-        "motivatingly"
-      ],
-      "correct": 0,
-      "explain": "Remain + adjective.",
-      "passage": "Long-term success often depends on staying (1)_____ during difficult periods."
-    },
-    {
-      "id": "M53",
-      "type": "cloze",
-      "q": "Employers often look for candidates who can work _____.",
-      "options": [
-        "independently",
-        "independent",
-        "independence",
-        "depend"
-      ],
-      "correct": 0,
-      "explain": "Work + adverb independently.",
-      "passage": "In addition to technical knowledge, graduates should be able to work (1)_____."
-    },
-    {
-      "id": "M54",
-      "type": "cloze",
-      "q": "The event attracted hundreds of _____ from different countries.",
-      "options": [
-        "participants",
-        "participates",
-        "participation",
-        "participated"
-      ],
-      "correct": 0,
-      "explain": "Hundreds of + plural countable noun.",
-      "passage": "The international conference brought together hundreds of (1)_____ from around the world."
-    },
-    {
-      "id": "M55",
-      "type": "cloze",
-      "q": "A balanced diet plays an important role _____ maintaining good health.",
-      "options": [
-        "in",
-        "at",
-        "on",
-        "for"
-      ],
-      "correct": 0,
-      "explain": "Play a role in + V-ing.",
-      "passage": "Nutrition plays a vital role (1)_____ keeping the body healthy."
-    },
-    {
-      "id": "M56",
-      "type": "reading",
-      "q": "What is the main benefit of flexible working hours mentioned in the text?",
-      "options": [
-        "Higher office rent",
-        "Better work-life balance",
-        "More commuting",
-        "Less autonomy"
-      ],
-      "correct": 1,
-      "explain": "Bài đọc nêu nhân viên dễ cân bằng công việc và cuộc sống.",
-      "passage": "Many companies now offer flexible working hours. Instead of following a fixed nine-to-five schedule, employees may choose when to start and finish their work. Supporters say this arrangement helps workers manage family responsibilities and maintain a better work-life balance. However, clear communication is necessary to keep teams productive."
-    },
-    {
-      "id": "M57",
-      "type": "reading",
-      "q": "According to the text, what is necessary for flexible working to succeed?",
-      "options": [
-        "Clear communication",
-        "Longer meetings",
-        "Strict fixed schedules",
-        "More offices"
-      ],
-      "correct": 0,
-      "explain": "Câu cuối: clear communication is necessary.",
-      "passage": "Many companies now offer flexible working hours. Instead of following a fixed nine-to-five schedule, employees may choose when to start and finish their work. Supporters say this arrangement helps workers manage family responsibilities and maintain a better work-life balance. However, clear communication is necessary to keep teams productive."
-    },
-    {
-      "id": "M58",
-      "type": "reading",
-      "q": "Why are urban green spaces valuable, according to the passage?",
-      "options": [
-        "They replace all transport",
-        "They improve wellbeing",
-        "They increase traffic",
-        "They eliminate all pollution"
-      ],
-      "correct": 1,
-      "explain": "Công viên giúp cải thiện sức khỏe thể chất và tinh thần.",
-      "passage": "Parks and gardens do more than make cities attractive. They give residents places to exercise, relax and meet friends. Studies suggest that access to greenery can support physical and mental wellbeing. Nevertheless, public parks require ongoing maintenance and careful planning."
-    },
-    {
-      "id": "M59",
-      "type": "reading",
-      "q": "What challenge does the passage mention about parks?",
-      "options": [
-        "A lack of residents",
-        "Maintenance and planning",
-        "Too many hospitals",
-        "Unreliable internet"
-      ],
-      "correct": 1,
-      "explain": "Đoạn cuối nhắc tới maintenance and careful planning.",
-      "passage": "Parks and gardens do more than make cities attractive. They give residents places to exercise, relax and meet friends. Studies suggest that access to greenery can support physical and mental wellbeing. Nevertheless, public parks require ongoing maintenance and careful planning."
-    },
-    {
-      "id": "M60",
-      "type": "reading",
-      "q": "Why might people choose reusable water bottles?",
-      "options": [
-        "To produce more waste",
-        "To reduce single-use plastic",
-        "To make water expensive",
-        "To avoid drinking water"
-      ],
-      "correct": 1,
-      "explain": "Bình tái sử dụng giúp giảm nhựa dùng một lần.",
-      "passage": "The popularity of reusable water bottles has grown in recent years. Many consumers choose them to reduce single-use plastic waste. While producing a reusable bottle also requires resources, using it regularly over a long period can lower the need for disposable containers."
-    },
-    {
-      "id": "M61",
-      "type": "reading",
-      "q": "What does the author imply about reusable bottles?",
-      "options": [
-        "They have zero environmental cost",
-        "Their value depends partly on repeated use",
-        "They are always free",
-        "They should never be washed"
-      ],
-      "correct": 1,
-      "explain": "Giá trị môi trường phụ thuộc vào dùng thường xuyên, lâu dài.",
-      "passage": "The popularity of reusable water bottles has grown in recent years. Many consumers choose them to reduce single-use plastic waste. While producing a reusable bottle also requires resources, using it regularly over a long period can lower the need for disposable containers."
-    },
-    {
-      "id": "M62",
-      "type": "reading",
-      "q": "What is a challenge of online learning mentioned in the passage?",
-      "options": [
-        "Courses cannot be recorded",
-        "Students need self-discipline",
-        "It always costs more",
-        "It prohibits independent work"
-      ],
-      "correct": 1,
-      "explain": "Online learning yêu cầu self-discipline.",
-      "passage": "Online courses allow students to study from almost anywhere and often provide recorded lessons. This convenience is especially useful for people with busy schedules. On the other hand, learners need self-discipline to keep up with assignments, and some may miss face-to-face interaction."
-    },
-    {
-      "id": "M63",
-      "type": "reading",
-      "q": "Who may benefit most from the flexibility of online learning?",
-      "options": [
-        "People with busy schedules",
-        "Only children",
-        "Only full-time teachers",
-        "People without devices"
-      ],
-      "correct": 0,
-      "explain": "Tác giả nói sự tiện lợi đặc biệt hữu ích với người bận rộn.",
-      "passage": "Online courses allow students to study from almost anywhere and often provide recorded lessons. This convenience is especially useful for people with busy schedules. On the other hand, learners need self-discipline to keep up with assignments, and some may miss face-to-face interaction."
-    },
-    {
-      "id": "M64",
-      "type": "reading",
-      "q": "What is the writer’s overall view of volunteering?",
-      "options": [
-        "It only benefits volunteers",
-        "It can benefit communities and volunteers",
-        "It should be compulsory",
-        "It replaces paid employment"
-      ],
-      "correct": 1,
-      "explain": "Vừa cộng đồng vừa tình nguyện viên nhận lợi ích.",
-      "passage": "Volunteering is often associated with helping other people, but volunteers can gain valuable experience too. By taking part in community projects, they may develop teamwork and communication skills. These experiences can also introduce them to people from different backgrounds."
-    },
-    {
-      "id": "M65",
-      "type": "reading",
-      "q": "Which skill is explicitly mentioned?",
-      "options": [
-        "Programming",
-        "Teamwork",
-        "Driving",
-        "Accounting"
-      ],
-      "correct": 1,
-      "explain": "Bài đọc nêu teamwork and communication.",
-      "passage": "Volunteering is often associated with helping other people, but volunteers can gain valuable experience too. By taking part in community projects, they may develop teamwork and communication skills. These experiences can also introduce them to people from different backgrounds."
-    },
-    {
       "id": "BOOK_M001",
       "type": "grammar",
       "q": "Although Tim felt tired, he stayed up to finish his homework.",
@@ -1089,7 +179,7 @@
         "come"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. reach: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1103,7 +193,7 @@
         "comedy"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. humour: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1117,7 +207,7 @@
         "shy"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. impatient: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1131,7 +221,7 @@
         "put up with"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. put off: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1145,7 +235,7 @@
         "gift"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. souvenir: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1159,7 +249,7 @@
         "a meeting"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. an appointment: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1173,7 +263,7 @@
         "punishment"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. fine: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1201,7 +291,7 @@
         "equipment"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. information: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1215,7 +305,7 @@
         "myself"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. sight: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1229,7 +319,7 @@
         "leave"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. part: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1243,7 +333,7 @@
         "make"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. spend: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1257,7 +347,7 @@
         "off duty"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. out of order: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1271,7 +361,7 @@
         "gift"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. Award: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1285,7 +375,7 @@
         "generous"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. patient: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1299,7 +389,7 @@
         "lightning"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. forecast: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1313,7 +403,7 @@
         "payment"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. charge: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1327,7 +417,7 @@
         "generous"
       ],
       "correct": 1,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án B. selfish: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1341,7 +431,7 @@
         "take in"
       ],
       "correct": 1,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án B. take up: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1355,7 +445,7 @@
         "noisy"
       ],
       "correct": 0,
-      "explain": "Câu sách dùng “atmosphere ... calm me down”; văn phạm chuẩn nên là “atmosphere ... calms me down”. Giữ nguyên nguyên bản.",
+      "explain": "A. peaceful: quiet and peaceful atmosphere = bầu không khí yên bình. Trong sách “atmosphere ... calm” cần là “calms”.",
       "passage": ""
     },
     {
@@ -1369,7 +459,7 @@
         "certificate"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. degree: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1383,7 +473,7 @@
         "work"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. order: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1397,7 +487,7 @@
         "soap opera"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. comedy: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1411,7 +501,7 @@
         "rule"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. law: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1425,7 +515,7 @@
         "exactly"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. seriously: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1439,7 +529,7 @@
         "comfort"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. poverty: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1453,7 +543,7 @@
         "operated"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. behaved: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1467,7 +557,7 @@
         "dependently"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. independent: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1481,7 +571,7 @@
         "tasty"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. unhealthy: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1495,7 +585,7 @@
         "generous"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. aggressive: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1509,7 +599,7 @@
         "gets up"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. gets on with: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1523,7 +613,7 @@
         "great"
       ],
       "correct": 0,
-      "explain": "Câu sách ghi “in big troubles”; cách nói tự nhiên là “in big trouble”. Đáp án A tốt nhất trong 4 lựa chọn, nhưng câu hỏi gốc cần sửa.",
+      "explain": "A. big: big trouble = rắc rối lớn. Sách dùng “troubles” không tự nhiên ở đây; cách nói chuẩn là “be in big trouble”.",
       "passage": ""
     },
     {
@@ -1537,7 +627,7 @@
         "looking into"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. looking for: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1551,7 +641,7 @@
         "looked after"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. brought up: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1565,7 +655,7 @@
         "recipe"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. cure: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1579,7 +669,7 @@
         "voyage"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. travel: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1593,7 +683,7 @@
         "leather"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. gold: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1607,7 +697,7 @@
         "invoice"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. receipt: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1621,7 +711,7 @@
         "did"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. took: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1635,7 +725,7 @@
         "curtain"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. carpet: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1649,7 +739,7 @@
         "bake"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. boil: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1663,7 +753,7 @@
         "washing machine"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. dishwasher: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1677,7 +767,7 @@
         "cashier"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. manager: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1691,7 +781,7 @@
         "gloves"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. trousers: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1705,7 +795,7 @@
         "exam"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. qualification: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1719,7 +809,7 @@
         "discount"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. refund: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1733,7 +823,7 @@
         "Turkey"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. French: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1747,7 +837,7 @@
         "drought"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. humid: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1761,7 +851,7 @@
         "fought"
       ],
       "correct": 0,
-      "explain": "Vocabulary and collocations — review the sentence in context.",
+      "explain": "Đáp án A. defeated: phù hợp nghĩa và cấu trúc của câu. Đối chiếu lại ngữ cảnh cùng các phương án còn lại.",
       "passage": ""
     },
     {
@@ -1845,7 +935,7 @@
         "do"
       ],
       "correct": 0,
-      "explain": "make: make themselves comfortable = tự tạo sự thoải mái.",
+      "explain": "A. take: take their tent and food = mang lều và thức ăn theo khi đi cắm trại. Không phải “make themselves comfortable”.",
       "passage": "Although (0) _____ groups of people have always lived outdoors in tents, camping as we know it today only began to be (26) _____ about 50 years ago. The increase in the use of cars and improvements in camping (27) _____ have allowed more people to travel longer (28) _____ into the countryside and to stay there in greater comfort.\nMany campers like to be (29) _____ themselves in quiet areas, so they (30) _____ their tent and food and walk or cycle into the forests or the mountains. Others, preferring to be near people, drive to a public or privately-owned campsite (31) _____ has up-to-date facilities, (32) _____ hot showers and swimming pools.\nWhether campers are (33) _____ in the mountains or on a busy site, they should remember to (34) _____ the area clean and tidy. In the forests, they must put out any fires and keep food hidden to avoid attracting (35) _____ animals."
     },
     {
@@ -2200,156 +1290,6 @@
     }
   ],
   "rewrites": [
-    {
-      "id": "W1",
-      "q": "It is not necessary for you to bring a laptop.",
-      "answer": "You do not have to bring a laptop.",
-      "hint": "Use “have to”."
-    },
-    {
-      "id": "W2",
-      "q": "I last saw Mary three years ago.",
-      "answer": "I have not seen Mary for three years.",
-      "hint": "Begin with “I have not”."
-    },
-    {
-      "id": "W3",
-      "q": "Despite the heavy rain, they went hiking.",
-      "answer": "Although it was raining heavily, they went hiking.",
-      "hint": "Begin with “Although”."
-    },
-    {
-      "id": "W4",
-      "q": "This is the first time I have visited London.",
-      "answer": "I have never visited London before.",
-      "hint": "Begin with “I have never”."
-    },
-    {
-      "id": "W5",
-      "q": "She is too young to drive a car.",
-      "answer": "She is not old enough to drive a car.",
-      "hint": "Use “enough”."
-    },
-    {
-      "id": "W6",
-      "q": "He started learning English five years ago.",
-      "answer": "He has been learning English for five years.",
-      "hint": "Use “has been”."
-    },
-    {
-      "id": "W7",
-      "q": "The test was so difficult that nobody passed it.",
-      "answer": "It was such a difficult test that nobody passed it.",
-      "hint": "Use “such”."
-    },
-    {
-      "id": "W8",
-      "q": "People believe that he is an excellent teacher.",
-      "answer": "He is believed to be an excellent teacher.",
-      "hint": "Begin with “He”."
-    },
-    {
-      "id": "W9",
-      "q": "I regret not studying harder.",
-      "answer": "I wish I had studied harder.",
-      "hint": "Begin with “I wish”."
-    },
-    {
-      "id": "W10",
-      "q": "She did not go out because she was ill.",
-      "answer": "If she had not been ill, she would have gone out.",
-      "hint": "Use conditional type 3."
-    },
-    {
-      "id": "W11",
-      "q": "They cancelled the concert because of the storm.",
-      "answer": "The concert was cancelled because of the storm.",
-      "hint": "Begin with “The concert”."
-    },
-    {
-      "id": "W12",
-      "q": "I prefer tea to coffee.",
-      "answer": "I would rather drink tea than coffee.",
-      "hint": "Use “would rather”."
-    },
-    {
-      "id": "W13",
-      "q": "He was exhausted, but he finished his work.",
-      "answer": "Although he was exhausted, he finished his work.",
-      "hint": "Begin with “Although”."
-    },
-    {
-      "id": "W14",
-      "q": "The last time we travelled abroad was in 2022.",
-      "answer": "We have not travelled abroad since 2022.",
-      "hint": "Use “since”."
-    },
-    {
-      "id": "W15",
-      "q": "This exercise is easier than the previous one.",
-      "answer": "The previous exercise is more difficult than this one.",
-      "hint": "Begin with “The previous exercise”."
-    },
-    {
-      "id": "W16",
-      "q": "Why do you not apply for the scholarship?",
-      "answer": "If I were you, I would apply for the scholarship.",
-      "hint": "Use “If I were you”."
-    },
-    {
-      "id": "W17",
-      "q": "They will announce the results tomorrow.",
-      "answer": "The results will be announced tomorrow.",
-      "hint": "Change to passive voice."
-    },
-    {
-      "id": "W18",
-      "q": "He succeeded although he had little experience.",
-      "answer": "In spite of having little experience, he succeeded.",
-      "hint": "Use “In spite of”."
-    },
-    {
-      "id": "W19",
-      "q": "I cannot afford to buy that phone.",
-      "answer": "That phone is too expensive for me to buy.",
-      "hint": "Use “too”."
-    },
-    {
-      "id": "W20",
-      "q": "The teacher made us rewrite the essay.",
-      "answer": "We were made to rewrite the essay by the teacher.",
-      "hint": "Begin with “We were made”."
-    },
-    {
-      "id": "W21",
-      "q": "As soon as I arrived, it started raining.",
-      "answer": "No sooner had I arrived than it started raining.",
-      "hint": "Begin with “No sooner”."
-    },
-    {
-      "id": "W22",
-      "q": "He speaks English more fluently than I do.",
-      "answer": "I do not speak English as fluently as he does.",
-      "hint": "Use “as ... as”."
-    },
-    {
-      "id": "W23",
-      "q": "It is a pity that I cannot join the trip.",
-      "answer": "I wish I could join the trip.",
-      "hint": "Begin with “I wish”."
-    },
-    {
-      "id": "W24",
-      "q": "They have not finished the bridge yet.",
-      "answer": "The bridge has not been finished yet.",
-      "hint": "Change to passive voice."
-    },
-    {
-      "id": "W25",
-      "q": "He does not work hard, so he cannot get promoted.",
-      "answer": "If he worked hard, he could get promoted.",
-      "hint": "Use conditional type 2."
-    },
     {
       "id": "BOOK_R001",
       "q": "Although Tim felt tired, he stayed up to finish his homework.",
